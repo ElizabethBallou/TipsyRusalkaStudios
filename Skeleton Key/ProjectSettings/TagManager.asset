@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - destroyable
+  - DialogueBox
+  - ChoiceButton1
+  - ChoiceButton2
+  - ChoiceButton3
   layers:
   - Default
   - TransparentFX
