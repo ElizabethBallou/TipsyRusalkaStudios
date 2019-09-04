@@ -46,7 +46,7 @@ public class StoryParser
     //Do we have a choice to make here
     public bool HasChoice()
     {
-        return story.currentChoices.Count > 0;
+        return story.currentChoices != null && story.currentChoices.Count > 0;
     }
 
     //Get a variable
