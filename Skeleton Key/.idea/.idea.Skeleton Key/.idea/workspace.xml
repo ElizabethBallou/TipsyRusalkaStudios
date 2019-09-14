@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +102,7 @@
       <workItem from="1568057881138" duration="3738000" />
       <workItem from="1568067910130" duration="2312000" />
       <workItem from="1568226653872" duration="1289000" />
-      <workItem from="1568490311685" duration="900000" />
+      <workItem from="1568490311685" duration="4337000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -135,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567631084411</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="The conversation parser now has a working continue button. There is a new scene so that I can experiment with random strings from books in the public domain.">
+      <created>1568491260823</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568491260823</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +158,8 @@
     <MESSAGE value="ui struggles :/ Mitu, this is the most recent commit" />
     <MESSAGE value="Working to integrate Ink choices and UI" />
     <MESSAGE value="Jack helped this code actually work!! wow!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jack helped this code actually work!! wow!" />
+    <MESSAGE value="The conversation parser now has a working continue button. There is a new scene so that I can experiment with random strings from books in the public domain." />
+    <option name="LAST_COMMIT_MESSAGE" value="The conversation parser now has a working continue button. There is a new scene so that I can experiment with random strings from books in the public domain." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
