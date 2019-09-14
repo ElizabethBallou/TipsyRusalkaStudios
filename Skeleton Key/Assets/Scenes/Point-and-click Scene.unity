@@ -299,6 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa583a9990c2040f8ab10de4253e1e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkCursor: {fileID: 2800000, guid: 41471cf3798f74ec19fe230d7fac4331, type: 3}
+  examineCursor: {fileID: 2800000, guid: 42a39920a26654a8aa59bc5a04d6f6ce, type: 3}
+  talkCursor: {fileID: 2800000, guid: 449a6fa6bde2549db9815def0fe074a8, type: 3}
+  takeCursor: {fileID: 2800000, guid: dcdd3b771bdc241fd9cf8692a3dc7fed, type: 3}
   speed: 5
 --- !u!1 &1009253452
 GameObject:
