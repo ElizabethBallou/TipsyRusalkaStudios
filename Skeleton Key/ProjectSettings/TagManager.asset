@@ -9,6 +9,7 @@ TagManager:
   - ChoiceButton1
   - ChoiceButton2
   - ChoiceButton3
+  - continueButton
   layers:
   - Default
   - TransparentFX

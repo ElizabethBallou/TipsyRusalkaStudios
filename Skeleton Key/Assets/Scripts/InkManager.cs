@@ -13,16 +13,13 @@ public class InkManager : MonoBehaviour
 	public Coroutine printer;
 
 	private Story story;
-	//private StoryParser storyParser;
-
 
 	[Header("Story Information")] [SerializeField]
 	public StoryState CurrentStoryState;
 
 	private bool textDone = false;
 
-	public CharacterManager _characterManager;
-	public GameManager _gameManager;
+	private int charNumber;
 
 	// UI stuff
 	private Canvas uiCanvas;
@@ -32,15 +29,9 @@ public class InkManager : MonoBehaviour
 	private Button choicebutton1;
 	private Button choicebutton2;
 	private Button choicebutton3;
+	private Button continuebutton;
 
-	[Header("Text Speed")] public float TextSpeed = 0.01f;
-
-	[Header("Character Information")] [SerializeField]
-	private string currentCharName;
-
-	public Character[] CharacterData;
-
-	private Dictionary<string, Character> characters;
+	private const int maxCharactersPerBox = 200;
 
 	void Start()
 	{
@@ -54,58 +45,64 @@ public class InkManager : MonoBehaviour
 		choicebutton1 = GameObject.FindWithTag("ChoiceButton1").GetComponent<Button>();
 		choicebutton2 = GameObject.FindWithTag("ChoiceButton2").GetComponent<Button>();
 		choicebutton3 = GameObject.FindWithTag("ChoiceButton3").GetComponent<Button>();
-		Debug.Log("Found the buttons!");
-		_characterManager = GetComponent<CharacterManager>();
-		_gameManager = GetComponent<GameManager>();
+		continuebutton = GameObject.FindWithTag("continueButton").GetComponent<Button>();
 
-		characters = new Dictionary<string, Character>();
-		foreach (Character character in CharacterData)
-		{
-			characters.Add(character.Name, character);
-		}
+		Debug.Log("Found the buttons!");
 
 		CurrentStoryState = StoryState.EpisodeStart;
 
 		choicebutton1.gameObject.SetActive(false);
 		choicebutton2.gameObject.SetActive(false);
 		choicebutton3.gameObject.SetActive(false);
+		continuebutton.gameObject.SetActive(false);
 
 	}
 
 	private void Update()
 	{
+		Debug.Log(CurrentStoryState.ToString());
+
+		if (Input.GetKeyDown(KeyCode.Space)) ContinueButtonPressed();
+		
 		switch (CurrentStoryState)
 		{
 			case StoryState.EpisodeStart:
 				EpisodeStart();
 				break;
-			case StoryState.Printing:
-				PrintingStoryUpdate();
-				break;
-			case StoryState.Reading:
-				ReadingStoryUpdate();
+			case StoryState.TextAppear:
+				//TextAppearStoryUpdate();
 				break;
 			case StoryState.EpisodeEnd:
-				EpisodeEnd();
 				break;
 		}
 	}
 
-	private void PrintingStoryUpdate()
+	private void EpisodeStart()
+	{
+		TextAsset storyFile = Resources.Load<TextAsset>("Skeleton Key inky file");
+		Debug.Log("Story file loaded");
+		story = new Story(storyFile.text);
+		CurrentStoryState = StoryState.TextAppear;
+		
+		TextAppearStoryUpdate();
+	}
+	public void TextAppearStoryUpdate()
 	{
 		currentText = "";
+		dialogue.text = "";
 		while (story.canContinue)
 		{
 			currentText += story.Continue();
 		}
-		
-		CurrentStoryState = StoryState.Reading;
-		PrintStory(Color.black);
-		
-		Debug.Log("Current Choices: " + story.currentChoices.Count);
 
-		//Do we have a choice
-		if (story.currentChoices.Count > 0)
+		PrintStory(Color.black);
+
+		Debug.Log("Current Choices: " + story.currentChoices.Count);
+	}
+	public void ShowChoiceButtons()
+	{
+	//Do we have a choice
+	if (story.currentChoices.Count > 0)
 		{
 			if (story.currentChoices == null) return;
 			
@@ -119,23 +116,29 @@ public class InkManager : MonoBehaviour
 						case 0:
 							choicebutton1.transform.GetChild(0).gameObject.GetComponent<Text>().text =
 								choice.text.Trim();
-							choicebutton1.gameObject.SetActive(true);
+							if (textDone)
+							{
+								choicebutton1.gameObject.SetActive(true);
+							}
+
 							break;
 						case 1:
 							choicebutton2.transform.GetChild(0).gameObject.GetComponent<Text>().text =
 								choice.text.Trim();
-							choicebutton2.gameObject.SetActive(true);
+							if (textDone)
+							{
+								choicebutton2.gameObject.SetActive(true);
+							}
 							break;
 						case 2:
 							choicebutton3.transform.GetChild(0).gameObject.GetComponent<Text>().text =
 								choice.text.Trim();
-							choicebutton3.gameObject.SetActive(true);
+							if (textDone)
+							{
+								choicebutton3.gameObject.SetActive(true);
+							}
 							break;
 					}
-					// Button button = storyParser.CreateChoiceView(choice.text.Trim());
-					// Tell the button what to do when we press it
-					// button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
-
 				}
 			}
 
@@ -146,102 +149,97 @@ public class InkManager : MonoBehaviour
 				choicebutton2.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Continue";
 			}
 		}
-		
 	}
-	
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
 	}
 
+	//Function to print text letter-by-letter
 	private void PrintStory(Color textColor)
 	{
-		if (printer != null) StopCoroutine(printer);
-		printer = StartCoroutine(PrintText(textColor));
-	}
+		// if dialogue.text == "", do nothing
+		// remove dialogue.text from the front of current text, then do the rest
 
-	//Update while the player is reading
-	private void ReadingStoryUpdate()
-	{
-		/*if (textDone && (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
+		currentText = currentText.Substring(dialogue.text.Length, currentText.Length - dialogue.text.Length);
+		
+		if (currentText.Length < maxCharactersPerBox)
 		{
-			CurrentStoryState = StoryState.Printing;
+			dialogue.text = currentText;
+			dialogue.color = textColor;
+		}
+		else
+		{
+			dialogue.color = textColor;
+			
+			for (int i = 199; i < currentText.Length; i++)
+			{
+				string subStr = currentText.Substring(0, i);
+				dialogue.text = subStr;
+				
+				// check for a "sentence ender" - ".", "...", "?", "!"
+				// pause (yield return null) if the last character in dialogue.text (dialogue.text[dialogue.text.Length - 1] is one of those sentence enders
+
+				if (dialogue.text.Length >= maxCharactersPerBox)
+				{
+					charNumber = dialogue.text.Length;
+					switch (dialogue.text[dialogue.text.Length - 1])
+					{
+						case '.':
+							return;
+						case ',':
+							return;
+						case '-':
+							return;
+						case '!':
+							return;
+						case '?':
+							return;
+					
+					}
+					continuebutton.gameObject.SetActive(true);
+				}
+				// continue on mouse down or click on button or whatever.
+				// "clear" the text w/ continue is pressed AND "\n" is the beginning of the next string
+			}
+		}
+		
+
+		/*if (all the characters in dialogue.length have appeared)
+		 {
+		textDone = true;
 		}*/
 	}
 
-	private void EpisodeStart()
+	public void ContinueButtonPressed()
 	{
-		TextAsset storyFile = Resources.Load<TextAsset>("Skeleton Key inky file");
-		Debug.Log("Story file loaded");
-		story = new Story(storyFile.text);
-		CurrentStoryState = StoryState.Printing;
-	}
-
-	private void EpisodeEnd()
-	{
-		//chapter++;
-		dialogue.text = "";
-		currentCharName = "";
-	}
-
-	//Coroutine to print text letter-by-letter
-	private IEnumerator PrintText(Color textColor)
-	{
-		for (int i = 0; i < currentText.Length; i++)
+		PrintStory(Color.black);
+		
+		
+		
+		if (textDone)
 		{
-			string subStr = currentText.Substring(0, i);
-			dialogue.text = subStr;
-			dialogue.color = textColor;
-
-			if (Input.GetMouseButtonDown(0))
-			{
-				dialogue.text = currentText;
-				break;
-			}
-			
-			// check for a "sentence ender" - ".", "...", "?", "!"
-			// pause (yield return null) if the last character in dialogue.text (dialogue.text[dialogue.text.Length - 1] is one of those sentence enders
-			// continue on mouse down or click on button or whatever.
-			// "clear" the text w/ continue is pressed AND "\n" is the beginning of the next string
-			
-			yield return new WaitForSeconds(TextSpeed);
-			
+			ShowChoiceButtons();
 		}
-
-		textDone = true;
 	}
 
 	public void ChoiceButtonPressed(int buttonNumber)
 	{
 		story.ChooseChoiceIndex(buttonNumber);
-		CurrentStoryState = StoryState.Printing;
+		CurrentStoryState = StoryState.TextAppear;
 		
 		choicebutton1.gameObject.SetActive(false);
 		choicebutton2.gameObject.SetActive(false);
 		choicebutton3.gameObject.SetActive(false);
 	}
 
-	public void Quit()
-	{
-		Application.Quit();
-	}
-	
 }
 
 	public enum StoryState
 	{
 		EpisodeStart,
-		Printing,
-		Reading,
+		TextAppear,
 		EpisodeEnd
-	}
-
-	[Serializable]
-	public struct Character
-	{
-		public string Name;
-		public Sprite Sprite;
-		public Color TextColor;
 	}
 
 
