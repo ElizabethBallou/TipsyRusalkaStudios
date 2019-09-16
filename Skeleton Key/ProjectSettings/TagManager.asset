@@ -10,6 +10,7 @@ TagManager:
   - ChoiceButton2
   - ChoiceButton3
   - continueButton
+  - BookText
   layers:
   - Default
   - TransparentFX

@@ -9,9 +9,8 @@ using Random = System.Random;
 public class BookController : MonoBehaviour
 {
     private Text bookText;
-    private int bookCharacterNumber = 0;
-    private char[] allBookChars;
     private string RandomWord;
+    public int NewStringLength;
     private string[] splitString;
 
     // Start is called before the first frame update
@@ -23,13 +22,6 @@ public class BookController : MonoBehaviour
         string sourceText = File.ReadAllText(sourceTextPath); //get all the text of the book
         Debug.Log("loaded Arabian Nights");
         bookText.text = sourceText;
-
-        foreach (char x in sourceText)
-        {
-            bookCharacterNumber++;
-        }
-
-        Debug.Log("The number of characters in this book is " + bookCharacterNumber);
         splitString = sourceText.Split(new string[] {" "}, StringSplitOptions.None); //split the text into an array of 1-word strings
         Debug.Log("The number of words in this book is " + splitString.Length);
     }
@@ -46,6 +38,12 @@ public class BookController : MonoBehaviour
 
     public void ChooseRandomWord()
     {
-        //RandomWord = splitString[Random.Range(0, splitString.Length)];
+        bookText.text = ""; //resets the text
+
+        for (int i = 0; i < NewStringLength; i++)
+        {
+            RandomWord = splitString[UnityEngine.Random.Range(0, splitString.Length)];
+            bookText.text = bookText.text + RandomWord + " "; 
+        }
     }
 }

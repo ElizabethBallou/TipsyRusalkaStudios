@@ -9,17 +9,14 @@ using Ink.Runtime;
 public class InkManager : MonoBehaviour
 {
 	[SerializeField] private TextAsset inkJSONAsset;
-
-	public Coroutine printer;
-
+	
 	private Story story;
 
 	[Header("Story Information")] [SerializeField]
 	public StoryState CurrentStoryState;
 
 	private bool textDone = false;
-
-	private int charNumber;
+	
 
 	// UI stuff
 	private Canvas uiCanvas;
@@ -167,6 +164,10 @@ public class InkManager : MonoBehaviour
 		{
 			dialogue.text = currentText;
 			dialogue.color = textColor;
+			textDone = true;
+			continuebutton.gameObject.SetActive(false);
+			ShowChoiceButtons();
+			
 		}
 		else
 		{
@@ -182,7 +183,7 @@ public class InkManager : MonoBehaviour
 
 				if (dialogue.text.Length >= maxCharactersPerBox)
 				{
-					charNumber = dialogue.text.Length;
+					//charNumber = dialogue.text.Length;
 					switch (dialogue.text[dialogue.text.Length - 1])
 					{
 						case '.':
@@ -199,24 +200,14 @@ public class InkManager : MonoBehaviour
 					}
 					continuebutton.gameObject.SetActive(true);
 				}
-				// continue on mouse down or click on button or whatever.
-				// "clear" the text w/ continue is pressed AND "\n" is the beginning of the next string
 			}
 		}
-		
-
-		/*if (all the characters in dialogue.length have appeared)
-		 {
-		textDone = true;
-		}*/
 	}
 
 	public void ContinueButtonPressed()
 	{
 		PrintStory(Color.black);
-		
-		
-		
+
 		if (textDone)
 		{
 			ShowChoiceButtons();
