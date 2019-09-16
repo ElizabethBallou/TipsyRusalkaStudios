@@ -477,7 +477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa462b80392e4b449849f389174bd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewStringLength: 500
+  ChunkSize: 100
+  WordChunkLength: 5
 --- !u!4 &1437575698
 Transform:
   m_ObjectHideFlags: 0

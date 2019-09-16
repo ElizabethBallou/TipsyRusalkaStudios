@@ -16,7 +16,6 @@ public class InkManager : MonoBehaviour
 	public StoryState CurrentStoryState;
 
 	private bool textDone = false;
-	
 
 	// UI stuff
 	private Canvas uiCanvas;
@@ -67,7 +66,7 @@ public class InkManager : MonoBehaviour
 				EpisodeStart();
 				break;
 			case StoryState.TextAppear:
-				//TextAppearStoryUpdate();
+				TextAppearStoryUpdate();
 				break;
 			case StoryState.EpisodeEnd:
 				break;
@@ -77,10 +76,9 @@ public class InkManager : MonoBehaviour
 	private void EpisodeStart()
 	{
 		TextAsset storyFile = Resources.Load<TextAsset>("Skeleton Key inky file");
-		Debug.Log("Story file loaded");
+		//Debug.Log("Story file loaded");
 		story = new Story(storyFile.text);
-		CurrentStoryState = StoryState.TextAppear;
-		
+
 		TextAppearStoryUpdate();
 	}
 	public void TextAppearStoryUpdate()
@@ -94,13 +92,15 @@ public class InkManager : MonoBehaviour
 
 		PrintStory(Color.black);
 
-		Debug.Log("Current Choices: " + story.currentChoices.Count);
+		//Debug.Log("Current Choices: " + story.currentChoices.Count);
 	}
 	public void ShowChoiceButtons()
 	{
-	//Do we have a choice
+		//Change the Storystate so that the player can choose one of the buttons
+		CurrentStoryState = StoryState.WaitForInteraction;
+	//Do we have a choice? If so, run the following code...
 	if (story.currentChoices.Count > 0)
-		{
+	{
 			if (story.currentChoices == null) return;
 			
 			if (story.currentChoices.Count > 0)
@@ -138,18 +138,7 @@ public class InkManager : MonoBehaviour
 					}
 				}
 			}
-
-			//The conversation has no choices
-			else
-			{
-				choicebutton2.gameObject.SetActive(true);
-				choicebutton2.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Continue";
-			}
 		}
-	}
-	// When we click the choice button, tell the story to choose that choice!
-	void OnClickChoiceButton (Choice choice) {
-		story.ChooseChoiceIndex (choice.index);
 	}
 
 	//Function to print text letter-by-letter
@@ -214,6 +203,7 @@ public class InkManager : MonoBehaviour
 		}
 	}
 
+	// When we click the choice button, tell the story to choose that choice!
 	public void ChoiceButtonPressed(int buttonNumber)
 	{
 		story.ChooseChoiceIndex(buttonNumber);
@@ -230,6 +220,7 @@ public class InkManager : MonoBehaviour
 	{
 		EpisodeStart,
 		TextAppear,
+		WaitForInteraction,
 		EpisodeEnd
 	}
 

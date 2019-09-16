@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Randomized Book Text Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Randomized Book Text Test.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +29,7 @@
     <setting file="file://D:/Downloads/InkConversationUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Story.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -39,8 +37,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
       </list>
     </option>
   </component>
@@ -106,7 +104,8 @@
       <workItem from="1568067910130" duration="2312000" />
       <workItem from="1568226653872" duration="1289000" />
       <workItem from="1568490311685" duration="6174000" />
-      <workItem from="1568590964953" duration="1068000" />
+      <workItem from="1568590964953" duration="1161000" />
+      <workItem from="1568663218165" duration="3356000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568494857399</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="the choice buttons are showing properly now!">
+      <created>1568592379737</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568592379737</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +177,8 @@
     <MESSAGE value="Jack helped this code actually work!! wow!" />
     <MESSAGE value="The conversation parser now has a working continue button. There is a new scene so that I can experiment with random strings from books in the public domain." />
     <MESSAGE value="the book controller reads entire books, then splits them into words!" />
-    <option name="LAST_COMMIT_MESSAGE" value="the book controller reads entire books, then splits them into words!" />
+    <MESSAGE value="the choice buttons are showing properly now!" />
+    <option name="LAST_COMMIT_MESSAGE" value="the choice buttons are showing properly now!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
