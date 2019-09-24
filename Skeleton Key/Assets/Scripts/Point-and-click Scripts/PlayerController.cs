@@ -1,38 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    //private GameObject rb2d;
     private Camera cam;
-    private Texture2D[] cursors;
     private SpriteRenderer playerSprite;
-    private Vector2 newPos;
     private int cursorIndex;
-    
-    public Texture2D walkCursor;
-    public Texture2D examineCursor;
-    public Texture2D talkCursor;
-    public Texture2D takeCursor;
-    
-    public int speed = 1;
-    
-    
+
+    public Animator anim;
+    public Image cursorSprite;
+    public Vector2 newPos;
+    public Collider2D bookOfBabel;
+    public Collider2D bone;
+    public float speed;
+
+    public static PlayerController instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        cursors = new[] {walkCursor, examineCursor, talkCursor, takeCursor};
-        
+        instance = this;
         cam = Camera.main;
-        Cursor.SetCursor(cursors[0], Vector2.zero, CursorMode.Auto);
+        Cursor.visible = false;
         cursorIndex = 0;
         playerSprite = GetComponent<SpriteRenderer>();
+        newPos = playerSprite.transform.position;
+        anim.Play("cursor_walking_anim");
     }
 
     // Update is called once per frame
     void Update()
     {
+        cursorSprite.transform.position = Input.mousePosition;
+
         if (Input.GetMouseButtonUp(1))
         {
             ChangeCursor();
@@ -52,30 +55,52 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("It doesn't say much.");
                     break;
                 case 3:
-                    Debug.Log("It doesn't budge.");
+                    Take();
                     break;
                 default:
                     break;
             }
         }
-        
+
+        if (Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse Y") < 0 || Input.GetAxis("Mouse X") > 0) {
+            anim.speed = 1;
+        } else {
+            anim.speed = 0;
+        }
+
         MovePlayer();
     }
 
     void ChangeCursor()
     {
-        if (cursorIndex < cursors.Length - 1)
+        if (cursorIndex < 3)
         {
-            Cursor.SetCursor(cursors[cursorIndex + 1], Vector2.zero, CursorMode.Auto);
             cursorIndex += 1;
         }
-        else if (cursorIndex == cursors.Length - 1)
+        else if (cursorIndex == 3)
         {
-            Cursor.SetCursor(cursors[0], Vector2.zero, CursorMode.Auto);
             cursorIndex = 0;
         }
+        
+        switch (cursorIndex)
+        {
+            case 0:
+                anim.Play("cursor_walking_anim");
+                break;
+            case 1:
+                anim.Play("cursor_examining_anim");
+                break;
+            case 2:
+                anim.Play("cursor_talking_anim");
+                break;
+            case 3:
+                anim.Play("cursor_taking_anim");
+                break;
+            default:
+                break;
+        }
     }
-    
+
     void SetTargetPosition()
     {
         newPos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -91,6 +116,35 @@ public class PlayerController : MonoBehaviour
         if(newPos.x > transform.position.x)
         {
             playerSprite.flipX = false;
+        }
+    }
+    
+    private void Take()
+    {
+        Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        
+        if (hit.collider == bookOfBabel)
+        {
+            if(Input.GetMouseButtonUp(0))
+            {
+                Inventory.instance.AddItem(1);
+                Destroy(bookOfBabel.GetComponent<SpriteRenderer>());
+            }
+        }
+
+        if (hit.collider == bone)
+        {
+            if(Input.GetMouseButtonUp(0))
+            {
+                Inventory.instance.AddItem(0);
+                Destroy(bone.GetComponent<SpriteRenderer>());
+            }
+        }
+
+        else if (hit.collider == null)
+        {
+            Debug.Log("It doesn't budge.");
         }
     }
 }
