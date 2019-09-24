@@ -43,6 +43,7 @@ public class InkManager : MonoBehaviour
 		dialogue = dialogueBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 		continuebutton = dialogueBox.transform.GetChild(1).GetComponent<Button>();
 		exitbutton = dialogueBox.transform.Find("ExitIcon").GetComponent<Button>();
+		exitbutton.onClick.AddListener(()=>ExitTextBox());
 		choicebutton1 = GameObject.FindWithTag("ChoiceButton1").GetComponent<Button>();
 		choicebutton1.onClick.AddListener(()=>ChoiceButtonPressed(0));
 		choicebutton2 = GameObject.FindWithTag("ChoiceButton2").GetComponent<Button>();
@@ -95,7 +96,7 @@ public class InkManager : MonoBehaviour
 		Debug.Log(story.currentChoices?.Count);
 		if (!story.canContinue && story.currentChoices?.Count == 0)
 		{
-			ExitButtonAppear();
+			exitbutton.gameObject.SetActive(true);
 		}
 	}
 	public void ShowChoiceButtons()
@@ -115,7 +116,7 @@ public class InkManager : MonoBehaviour
 					switch (i)
 					{
 						case 0:
-							choicebutton1.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
+							choicebutton1.GetComponent<TextMeshProUGUI>().text =
 								choice.text.Trim();
 							if (textDone)
 							{
@@ -124,7 +125,7 @@ public class InkManager : MonoBehaviour
 
 							break;
 						case 1:
-							choicebutton2.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
+							choicebutton2.GetComponent<TextMeshProUGUI>().text =
 								choice.text.Trim();
 							if (textDone)
 							{
@@ -132,7 +133,7 @@ public class InkManager : MonoBehaviour
 							}
 							break;
 						case 2:
-							choicebutton3.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
+							choicebutton3.GetComponent<TextMeshProUGUI>().text =
 								choice.text.Trim();
 							if (textDone)
 							{
@@ -218,9 +219,9 @@ public class InkManager : MonoBehaviour
 		choicebutton3.gameObject.SetActive(false);
 	}
 
-	public void ExitButtonAppear()
+	public void ExitTextBox()
 	{
-		exitbutton.gameObject.SetActive(true);
+		Destroy(dialogueBox);
 	}
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public BookController _bookController;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,26 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DisplayBook()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Collider2D collider = Physics2D.OverlapPoint(mousePos);
+
+        if (collider != null)
+        {
+            if (collider.gameObject.CompareTag("book"))
+            {
+                Debug.Log("you clicked a book!");
+                ClickBook();
+            }
+        }
+    }
+
+    public void ClickBook()
+    {
+        _bookController.SummonBook();
     }
 }

@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 using UnityEngine.UI;
 using Random = System.Random;
 
 public class BookController : MonoBehaviour
 {
-    private Text bookText;
+    public GameObject bookPrefab;
+    private GameObject myBook;
+    private Canvas uiCanvas;
+    private TextMeshProUGUI bookText;
+    private string sourceText;
     private string RandomString;
     public int ChunkSize; //how many chunks will be printed into the text object
     public int WordChunkLength = 0; //how many words are in each chunk
@@ -19,13 +24,10 @@ public class BookController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bookText = GameObject.FindWithTag("BookText")
-            .GetComponent<Text>(); //locate the text object we will be using to display the book
+        uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; //locate the source .txt file
-        string sourceText = File.ReadAllText(sourceTextPath); //get all the text of the book
+        sourceText = File.ReadAllText(sourceTextPath); //get all the text of the book
         Debug.Log("loaded Arabian Nights");
-        bookText.text = sourceText;
-        Debug.Log("The number of characters in this book is " + sourceText.Length);
         for (int i = 0; i < sourceText.Length; i++)
         {
             // add to tempString the character that's being run through in this for loop
@@ -43,14 +45,16 @@ public class BookController : MonoBehaviour
                 tempString = "";
             }
         }
-        
-        //splitString = sourceText.Split(new string[] {" "}, StringSplitOptions.None); //split the text into an array of 1-word strings
-        //Debug.Log("The number of words in this book is " + splitString.Length);
     }
     
     // Update is called once per frame
-    void Update()
+    public void SummonBook()
     {
+        myBook = Instantiate(bookPrefab, uiCanvas.transform);
+        bookText = GameObject.FindWithTag("BookText").GetComponent<TextMeshProUGUI>(); //locate the text object we will be using to display the book
+        bookText.text = sourceText;
+
+
     }
 
     public void OnButtonClick()

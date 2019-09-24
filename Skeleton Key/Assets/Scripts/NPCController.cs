@@ -20,7 +20,6 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void DisplayTextBox()
     {
         //if the story is idle, then the text box can appear. If it isn't idle, we can't instantiate a second text box
