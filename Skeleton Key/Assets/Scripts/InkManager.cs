@@ -5,6 +5,7 @@ using System.Configuration;
 using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
+using TMPro;
 
 public class InkManager : MonoBehaviour
 {
@@ -17,46 +18,44 @@ public class InkManager : MonoBehaviour
 
 	private bool textDone = false;
 
+	private int buttonNumber;
+	
 	// UI stuff
+	public GameObject textboxPrefab;
 	private Canvas uiCanvas;
-	private Image dialogueBox;
-	private Text dialogue;
+	private GameObject dialogueBox;
+	private TextMeshProUGUI dialogue;
 	private string currentText;
 	private Button choicebutton1;
 	private Button choicebutton2;
 	private Button choicebutton3;
 	private Button continuebutton;
 
-	private const int maxCharactersPerBox = 200;
+	public int maxCharactersPerBox;
 
-	void Start()
+	public void OpenDialoguePanel()
 	{
 		//Find all the UI components
 		uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-		Debug.Log("Found the canvas!");
-		dialogueBox = GameObject.FindWithTag("DialogueBox").GetComponent<Image>();
-		Debug.Log("Found the dialogue box!");
-		dialogue = dialogueBox.transform.GetChild(0).GetComponent<Text>();
-		Debug.Log("Found the dialogue text!");
+		dialogueBox = Instantiate(textboxPrefab, uiCanvas.transform);
+		dialogueBox.GetComponent<Image>().sprite = Resources.Load("Prefabs/Ink Text Box") as Sprite;
+		dialogue = dialogueBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+		continuebutton = dialogueBox.transform.GetChild(1).GetComponent<Button>();
 		choicebutton1 = GameObject.FindWithTag("ChoiceButton1").GetComponent<Button>();
+		choicebutton1.onClick.AddListener(()=>ChoiceButtonPressed(0));
 		choicebutton2 = GameObject.FindWithTag("ChoiceButton2").GetComponent<Button>();
+		choicebutton2.onClick.AddListener(()=>ChoiceButtonPressed(1));
 		choicebutton3 = GameObject.FindWithTag("ChoiceButton3").GetComponent<Button>();
-		continuebutton = GameObject.FindWithTag("continueButton").GetComponent<Button>();
-
-		Debug.Log("Found the buttons!");
-
+		choicebutton3.onClick.AddListener(()=>ChoiceButtonPressed(2));
+		
 		CurrentStoryState = StoryState.EpisodeStart;
-
-		choicebutton1.gameObject.SetActive(false);
-		choicebutton2.gameObject.SetActive(false);
-		choicebutton3.gameObject.SetActive(false);
+		
 		continuebutton.gameObject.SetActive(false);
-
 	}
 
 	private void Update()
 	{
-		Debug.Log(CurrentStoryState.ToString());
+		//Debug.Log(CurrentStoryState.ToString());
 
 		if (Input.GetKeyDown(KeyCode.Space)) ContinueButtonPressed();
 		
@@ -76,7 +75,7 @@ public class InkManager : MonoBehaviour
 	private void EpisodeStart()
 	{
 		TextAsset storyFile = Resources.Load<TextAsset>("Skeleton Key inky file");
-		//Debug.Log("Story file loaded");
+		Debug.Log("Story file loaded");
 		story = new Story(storyFile.text);
 
 		TextAppearStoryUpdate();
@@ -91,8 +90,6 @@ public class InkManager : MonoBehaviour
 		}
 
 		PrintStory(Color.black);
-
-		//Debug.Log("Current Choices: " + story.currentChoices.Count);
 	}
 	public void ShowChoiceButtons()
 	{
@@ -111,7 +108,7 @@ public class InkManager : MonoBehaviour
 					switch (i)
 					{
 						case 0:
-							choicebutton1.transform.GetChild(0).gameObject.GetComponent<Text>().text =
+							choicebutton1.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
 								choice.text.Trim();
 							if (textDone)
 							{
@@ -120,7 +117,7 @@ public class InkManager : MonoBehaviour
 
 							break;
 						case 1:
-							choicebutton2.transform.GetChild(0).gameObject.GetComponent<Text>().text =
+							choicebutton2.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
 								choice.text.Trim();
 							if (textDone)
 							{
@@ -128,7 +125,7 @@ public class InkManager : MonoBehaviour
 							}
 							break;
 						case 2:
-							choicebutton3.transform.GetChild(0).gameObject.GetComponent<Text>().text =
+							choicebutton3.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
 								choice.text.Trim();
 							if (textDone)
 							{
@@ -218,6 +215,7 @@ public class InkManager : MonoBehaviour
 
 	public enum StoryState
 	{
+		IdleStory,
 		EpisodeStart,
 		TextAppear,
 		WaitForInteraction,

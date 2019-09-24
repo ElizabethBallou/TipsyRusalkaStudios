@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Continue Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Continue Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +27,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/StoryState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ATC prototype/Assets/Scripts/InkManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BookController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -28,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/InkConversationUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Story.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -37,8 +47,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" />
       </list>
     </option>
   </component>
@@ -74,10 +86,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="13424">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="13424" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -105,7 +117,10 @@
       <workItem from="1568226653872" duration="1289000" />
       <workItem from="1568490311685" duration="6174000" />
       <workItem from="1568590964953" duration="1161000" />
-      <workItem from="1568663218165" duration="3356000" />
+      <workItem from="1568663218165" duration="3521000" />
+      <workItem from="1568917101014" duration="11158000" />
+      <workItem from="1568987146228" duration="1664000" />
+      <workItem from="1569265653866" duration="1570000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -149,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568592379737</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="BookController is now pulling words in chunks of 5">
+      <created>1568666720829</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568666720829</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +200,8 @@
     <MESSAGE value="The conversation parser now has a working continue button. There is a new scene so that I can experiment with random strings from books in the public domain." />
     <MESSAGE value="the book controller reads entire books, then splits them into words!" />
     <MESSAGE value="the choice buttons are showing properly now!" />
-    <option name="LAST_COMMIT_MESSAGE" value="the choice buttons are showing properly now!" />
+    <MESSAGE value="BookController is now pulling words in chunks of 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="BookController is now pulling words in chunks of 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -199,6 +222,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs</url>
+          <line>78</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" initialLine="80">
+            <startOffsets>
+              <option value="2264" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2298" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

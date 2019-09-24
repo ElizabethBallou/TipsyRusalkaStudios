@@ -11,6 +11,8 @@ TagManager:
   - ChoiceButton3
   - continueButton
   - BookText
+  - Canvas
+  - NPC
   layers:
   - Default
   - TransparentFX
