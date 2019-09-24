@@ -9,10 +9,13 @@ TagManager:
   - ChoiceButton1
   - ChoiceButton2
   - ChoiceButton3
-  - continueButton
+  - ItemDatabase
+  - isItem
   - BookText
   - Canvas
   - NPC
+  - continueButton
+  - ExitButton
   layers:
   - Default
   - TransparentFX

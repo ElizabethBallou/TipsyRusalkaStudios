@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     public static PlayerController instance;
+    public NPCController _npcController;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,8 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 2:
                     Debug.Log("It doesn't say much.");
+                    _npcController.DisplayTextBox();
+                    cursorSprite.transform.SetAsLastSibling();
                     break;
                 case 3:
                     Take();

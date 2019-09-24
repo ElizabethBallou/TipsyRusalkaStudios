@@ -3,15 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Continue Button.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Continue Button.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.ink" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,9 +29,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ATC prototype/Assets/Scripts/InkManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BookController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/StoryParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Fonts/ADega Serif Regular SDF.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Container.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../RedoneShakespeare/Something Sexy/Assets/Scripts/YorickController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" root0="FORCE_HIGHLIGHTING" />
@@ -39,6 +41,7 @@
     <setting file="file://D:/Downloads/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Story.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -49,8 +52,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
       </list>
     </option>
   </component>
@@ -86,10 +90,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="13424">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="14960">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13424" />
+      <option name="pid" value="14960" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -121,6 +125,7 @@
       <workItem from="1568917101014" duration="11158000" />
       <workItem from="1568987146228" duration="1664000" />
       <workItem from="1569265653866" duration="1570000" />
+      <workItem from="1569344932048" duration="5738000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -171,7 +176,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568666720829</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Text box now properly loading in when you click on an NPC. Text changed over to TMP.">
+      <created>1569344978629</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569344978629</updated>
+    </task>
+    <task id="LOCAL-00009" summary="made Dirty Hands Jane a prefab ;)">
+      <created>1569345108992</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569345108992</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +220,9 @@
     <MESSAGE value="the book controller reads entire books, then splits them into words!" />
     <MESSAGE value="the choice buttons are showing properly now!" />
     <MESSAGE value="BookController is now pulling words in chunks of 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="BookController is now pulling words in chunks of 5" />
+    <MESSAGE value="Text box now properly loading in when you click on an NPC. Text changed over to TMP." />
+    <MESSAGE value="made Dirty Hands Jane a prefab ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="made Dirty Hands Jane a prefab ;)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -225,13 +246,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs</url>
-          <line>78</line>
+          <line>80</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" initialLine="80">
             <startOffsets>
-              <option value="2264" />
+              <option value="2370" />
             </startOffsets>
             <endOffsets>
-              <option value="2298" />
+              <option value="2404" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
