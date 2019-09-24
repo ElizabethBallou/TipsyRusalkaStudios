@@ -30,6 +30,7 @@ public class InkManager : MonoBehaviour
 	private Button choicebutton2;
 	private Button choicebutton3;
 	private Button continuebutton;
+	private Button exitbutton;
 
 	public int maxCharactersPerBox;
 
@@ -41,6 +42,7 @@ public class InkManager : MonoBehaviour
 		dialogueBox.GetComponent<Image>().sprite = Resources.Load("Prefabs/Ink Text Box") as Sprite;
 		dialogue = dialogueBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 		continuebutton = dialogueBox.transform.GetChild(1).GetComponent<Button>();
+		exitbutton = dialogueBox.transform.Find("ExitIcon").GetComponent<Button>();
 		choicebutton1 = GameObject.FindWithTag("ChoiceButton1").GetComponent<Button>();
 		choicebutton1.onClick.AddListener(()=>ChoiceButtonPressed(0));
 		choicebutton2 = GameObject.FindWithTag("ChoiceButton2").GetComponent<Button>();
@@ -90,6 +92,11 @@ public class InkManager : MonoBehaviour
 		}
 
 		PrintStory(Color.black);
+		Debug.Log(story.currentChoices?.Count);
+		if (!story.canContinue && story.currentChoices?.Count == 0)
+		{
+			ExitButtonAppear();
+		}
 	}
 	public void ShowChoiceButtons()
 	{
@@ -209,6 +216,11 @@ public class InkManager : MonoBehaviour
 		choicebutton1.gameObject.SetActive(false);
 		choicebutton2.gameObject.SetActive(false);
 		choicebutton3.gameObject.SetActive(false);
+	}
+
+	public void ExitButtonAppear()
+	{
+		exitbutton.gameObject.SetActive(true);
 	}
 
 }

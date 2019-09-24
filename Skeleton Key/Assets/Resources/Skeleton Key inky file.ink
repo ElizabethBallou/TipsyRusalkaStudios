@@ -9,9 +9,12 @@ Well, hello there. I'm an NPC. Welcome to the Library of Forking Paths, stranger
 
 === example_knot_1a ===
 tk tk tk tk
+->END
 
 === example_knot_1b ===
-tk tk tk tk 
+tk tk tk tk
+->END
 
 === example_knot_1c ===
-tk tk tk tk tk 
+tk tk tk tk tk
+->END
