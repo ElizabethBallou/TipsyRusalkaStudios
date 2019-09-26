@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    private GameManager _gameManager;
     private Camera cam;
     private SpriteRenderer playerSprite;
     public int cursorIndex;
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        _gameManager = GameManager.instance;
         cam = Camera.main;
         Cursor.visible = false;
         cursorIndex = 0;
@@ -84,7 +85,6 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 2:
                     Debug.Log("It doesn't say much.");
-                    npcController.DisplayTextBox();
                     _gameManager.DisplayTextBox();
                     cursorSprite.transform.SetAsLastSibling();
                     break;
