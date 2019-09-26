@@ -6,11 +6,27 @@ public class GameManager : MonoBehaviour
 {
     public BookController _bookController;
     public InkManager _inkManager;
-    
+    public GameObject bookPrefab;
+
+    private Canvas uiCanvas;
+    public static GameManager instance;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogError("Elizabeth you fucked up there's another gamemanager in the scene!'");
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        GameObject newBook = Instantiate(bookPrefab, uiCanvas.transform);
         
+        newBook.SetActive(false);
+        _bookController = newBook.GetComponent<BookController>();
     }
 
     // Update is called once per frame

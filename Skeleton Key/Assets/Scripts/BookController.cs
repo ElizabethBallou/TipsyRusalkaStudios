@@ -5,15 +5,14 @@ using UnityEngine;
 using System.IO;
 using TMPro;
 using UnityEngine.UI;
+using VSCodeEditor;
 using Random = System.Random;
 
 public class BookController : MonoBehaviour
 {
-    public GameObject bookPrefab;
     private GameObject myBook;
-    private Canvas uiCanvas;
-    private TextMeshProUGUI leftPageText;
-    private TextMeshProUGUI rightPageText;
+    public TextMeshProUGUI leftPageText;
+    public TextMeshProUGUI rightPageText;
     private string sourceText;
     private string RandomString;
     public int ChunkSize; //how many chunks will be printed into the text object
@@ -21,26 +20,25 @@ public class BookController : MonoBehaviour
     private List<string> splitString = new List<string>();
     private int SpaceCounter = 0;
     private string tempString;
-    private Button leftButton;
-    private Button rightButton;
-    private Button exitButton;
+    public Button leftButton;
+    public Button rightButton;
+    public Button exitButton;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //load in all the ui objects
-        uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        myBook = Instantiate(bookPrefab, uiCanvas.transform);
-        leftPageText = GameObject.Find("LeftPage").GetComponent<TextMeshProUGUI>();
+        //myBook = Instantiate(bookPrefab, uiCanvas.transform);
+        //leftPageText = GameObject.Find("LeftPage").GetComponent<TextMeshProUGUI>();
         //locate the text objects we will be using to display the book
-        rightPageText = GameObject.Find("RightPage").GetComponent<TextMeshProUGUI>();
-        leftButton = GameObject.Find("RandomizeLeft").GetComponent<Button>();
-        rightButton = GameObject.Find("RandomizeRight").GetComponent<Button>();
-        exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        //rightPageText = GameObject.Find("RightPage").GetComponent<TextMeshProUGUI>();
+        //leftButton = GameObject.Find("RandomizeLeft").GetComponent<Button>();
+        //rightButton = GameObject.Find("RandomizeRight").GetComponent<Button>();
+        //exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
         //add appropriate listeners to buttons
-        leftButton.onClick.AddListener(()=>ChooseRandomString());
-        rightButton.onClick.AddListener(()=>ChooseRandomString());
-        exitButton.onClick.AddListener(()=>OnButtonExit());
+        //leftButton.onClick.AddListener(()=>ChooseRandomString());
+        //rightButton.onClick.AddListener(()=>ChooseRandomString());
+        //exitButton.onClick.AddListener(()=>OnButtonExit());
         
         //locate the source .txt file
         string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; 
@@ -65,13 +63,12 @@ public class BookController : MonoBehaviour
             }
         }
         
-        myBook.SetActive(false);
     }
     
     // Update is called once per frame
     public void SummonBook()
     {
-        myBook.SetActive(true);
+        gameObject.SetActive(true);
         ChooseRandomString();
     }
 
@@ -95,6 +92,6 @@ public class BookController : MonoBehaviour
 
     public void OnButtonExit()
     {
-        myBook.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

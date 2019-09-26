@@ -37,12 +37,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         cursorSprite.transform.position = Input.mousePosition;
-
         if (Input.GetMouseButtonUp(1))
         {
+
             ChangeCursor();
         }
-        
+
         if (Input.GetMouseButtonUp(0))
         {
             switch (cursorIndex)
