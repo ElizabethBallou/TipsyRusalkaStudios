@@ -2,17 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private Camera cam;
     private SpriteRenderer playerSprite;
-    private int cursorIndex;
+    public int cursorIndex;
 
     public NPCController npcController;
     public Animator anim;
     public Image cursorSprite;
+    public Collider2D door;
     public Collider2D bookOfBabel;
     public Collider2D bone;
     public float speed;
@@ -58,6 +60,17 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0))
         {
+            if (Inventory.instance._draggedItem.itemName == "Lock Pick")
+            {
+                Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+                if (hit.collider == door)
+                {
+                    SceneManager.LoadScene(1);
+                }
+            }
+
             switch (cursorIndex)
             {
                 case 0:
@@ -205,6 +218,5 @@ public class PlayerController : MonoBehaviour
         var lerpRate = ((transform.position.y - sw.position.y) / (nw.position.y - sw.position.y));
         var playerScale = Vector2.Lerp(playerMaxScale, playerMinScale, lerpRate);
         transform.localScale = playerScale;
-        
     }
 }

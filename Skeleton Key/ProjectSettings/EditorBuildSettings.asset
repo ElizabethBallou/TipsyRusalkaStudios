@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Point-and-click Scene.unity
+    guid: c11b1ed7731f247b2a9e9fa7649ee637
+  - enabled: 1
+    path: Assets/Scenes/LockPickExample.unity
+    guid: 553ba172e724744139cd5b5c6195276b
   m_configObjects: {}

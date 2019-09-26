@@ -12,6 +12,8 @@ public class Inventory : MonoBehaviour
     public int slotsX = 4;
     public int slotsY = 5;
     public GUISkin slotSkin;
+
+    public PlayerController playerController;
     
     private ItemDatabase _database;
     private int _prevIndex;
@@ -23,7 +25,7 @@ public class Inventory : MonoBehaviour
     private bool _showTooltip;
     private bool _draggingItem;
     private string _tooltip;
-    private Item _draggedItem;
+    public Item _draggedItem;
 
     public static Inventory instance;
     // Start is called before the first frame update
@@ -136,33 +138,40 @@ public class Inventory : MonoBehaviour
                     //if the mouse cursor is within that slot
                     if(slotRect.Contains(e.mousePosition))
                     {
-                        //and if the left mouse button is pressed AND the mouse is dragged AND we're not already dragging an item
-                        if (e.button == 0 && e.type == EventType.MouseDrag && !_draggingItem)
+                        if (playerController.cursorIndex == 3)
                         {
-                            _draggingItem = true;
-                            //store the index of the item we're dragging
-                            _prevIndex = i;
-                            //set the dragged item to the item we clicked on
-                            _draggedItem = slots[i];
-                            //put an empty item constructor in the slot we've just emptied
-                            inventory[i] = new Item();
+                            //and if the left mouse button is pressed AND the mouse is dragged AND we're not already dragging an item
+                            if (e.button == 0 && e.type == EventType.MouseDrag && !_draggingItem)
+                            {
+                                _draggingItem = true;
+                                //store the index of the item we're dragging
+                                _prevIndex = i;
+                                //set the dragged item to the item we clicked on
+                                _draggedItem = slots[i];
+                                //put an empty item constructor in the slot we've just emptied
+                                inventory[i] = new Item();
+                            }
+                            //or if the left mouse button is released or clicked AND we're already dragging an item
+                            if(e.type == EventType.MouseUp && _draggingItem)
+                            {
+                                //the item our cursor is hovering over goes into the slot where we previously grabbed the item we're dragging
+                                inventory[_prevIndex] = inventory[i];
+                                //the item we're currently dragging goes into the slot our cursor is hovering over
+                                inventory[i] = _draggedItem;
+                                _draggingItem = false;
+                                _draggedItem = null;
+                            }
                         }
-                        //or if the left mouse button is released or clicked AND we're already dragging an item
-                        if(e.type == EventType.MouseUp && _draggingItem)
+
+                        if (playerController.cursorIndex == 1)
                         {
-                            //the item our cursor is hovering over goes into the slot where we previously grabbed the item we're dragging
-                            inventory[_prevIndex] = inventory[i];
-                            //the item we're currently dragging goes into the slot our cursor is hovering over
-                            inventory[i] = _draggedItem;
-                            _draggingItem = false;
-                            _draggedItem = null;
-                        }
-                        //or if we're not currently dragging an item
-                        if (!_draggingItem)
-                        {
-                            //show the tooltip based on the information defined by our CreateTooltip Function
-                            _showTooltip = true;
-                            _tooltip = CreateTooltip(slots[i]);
+                            //or if we're not currently dragging an item
+                            if (!_draggingItem)
+                            {
+                                //show the tooltip based on the information defined by our CreateTooltip Function
+                                _showTooltip = true;
+                                _tooltip = CreateTooltip(slots[i]);
+                            }
                         }
                     }
                 }
