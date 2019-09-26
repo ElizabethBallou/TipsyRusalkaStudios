@@ -34,7 +34,7 @@ public class InkManager : MonoBehaviour
 
 	public int maxCharactersPerBox;
 
-	public void OpenDialoguePanel()
+	public void Start()
 	{
 		//Find all the UI components
 		uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -51,9 +51,14 @@ public class InkManager : MonoBehaviour
 		choicebutton3 = GameObject.FindWithTag("ChoiceButton3").GetComponent<Button>();
 		choicebutton3.onClick.AddListener(()=>ChoiceButtonPressed(2));
 		
-		CurrentStoryState = StoryState.EpisodeStart;
-		
+		dialogueBox.SetActive(false);
+	}
+
+	public void OpenDialoguePanel()
+	{
+		dialogueBox.SetActive(true);
 		continuebutton.gameObject.SetActive(false);
+		CurrentStoryState = StoryState.EpisodeStart;
 	}
 
 	private void Update()

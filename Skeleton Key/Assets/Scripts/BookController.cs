@@ -12,7 +12,8 @@ public class BookController : MonoBehaviour
     public GameObject bookPrefab;
     private GameObject myBook;
     private Canvas uiCanvas;
-    private TextMeshProUGUI bookText;
+    private TextMeshProUGUI leftPageText;
+    private TextMeshProUGUI rightPageText;
     private string sourceText;
     private string RandomString;
     public int ChunkSize; //how many chunks will be printed into the text object
@@ -20,13 +21,31 @@ public class BookController : MonoBehaviour
     private List<string> splitString = new List<string>();
     private int SpaceCounter = 0;
     private string tempString;
+    private Button leftButton;
+    private Button rightButton;
+    private Button exitButton;
 
     // Start is called before the first frame update
     void Start()
     {
+        //load in all the ui objects
         uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; //locate the source .txt file
-        sourceText = File.ReadAllText(sourceTextPath); //get all the text of the book
+        myBook = Instantiate(bookPrefab, uiCanvas.transform);
+        leftPageText = GameObject.Find("LeftPage").GetComponent<TextMeshProUGUI>();
+        //locate the text objects we will be using to display the book
+        rightPageText = GameObject.Find("RightPage").GetComponent<TextMeshProUGUI>();
+        leftButton = GameObject.Find("RandomizeLeft").GetComponent<Button>();
+        rightButton = GameObject.Find("RandomizeRight").GetComponent<Button>();
+        exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        //add appropriate listeners to buttons
+        leftButton.onClick.AddListener(()=>ChooseRandomString());
+        rightButton.onClick.AddListener(()=>ChooseRandomString());
+        exitButton.onClick.AddListener(()=>OnButtonExit());
+        
+        //locate the source .txt file
+        string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; 
+        //get all the text of the book
+        sourceText = File.ReadAllText(sourceTextPath);
         Debug.Log("loaded Arabian Nights");
         for (int i = 0; i < sourceText.Length; i++)
         {
@@ -45,31 +64,37 @@ public class BookController : MonoBehaviour
                 tempString = "";
             }
         }
+        
+        myBook.SetActive(false);
     }
     
     // Update is called once per frame
     public void SummonBook()
     {
-        myBook = Instantiate(bookPrefab, uiCanvas.transform);
-        bookText = GameObject.FindWithTag("BookText").GetComponent<TextMeshProUGUI>(); //locate the text object we will be using to display the book
-        bookText.text = sourceText;
-
-
-    }
-
-    public void OnButtonClick()
-    {
+        myBook.SetActive(true);
         ChooseRandomString();
     }
 
     public void ChooseRandomString()
     {
-        bookText.text = ""; //resets the text
+        leftPageText.text = ""; //resets the text
+        rightPageText.text = "";
 
         for (int i = 0; i < ChunkSize; i++)
         {
             RandomString = splitString[UnityEngine.Random.Range(0, splitString.Count)];
-            bookText.text = bookText.text + RandomString; 
+            leftPageText.text = leftPageText.text + RandomString; 
         }
+
+        for (int i = 0; i < ChunkSize; i++)
+        {
+            RandomString = splitString[UnityEngine.Random.Range(0, splitString.Count)];
+            rightPageText.text = rightPageText.text + RandomString;
+        }
+    }
+
+    public void OnButtonExit()
+    {
+        myBook.SetActive(false);
     }
 }

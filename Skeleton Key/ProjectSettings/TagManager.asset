@@ -16,6 +16,7 @@ TagManager:
   - NPC
   - continueButton
   - ExitButton
+  - book
   layers:
   - Default
   - TransparentFX
