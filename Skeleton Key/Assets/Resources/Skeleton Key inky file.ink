@@ -8,13 +8,21 @@ Well, hello there. I'm an NPC. Welcome to the Library of Forking Paths, stranger
     ->example_knot_1c
 
 === example_knot_1a ===
-tk tk tk tk
-->END
+It's where you live now. Maybe you've always lived here.
+*[Uh...]
+->example_knot_1d
 
 === example_knot_1b ===
-tk tk tk tk
-->END
+The One who Transgressed. Worse than Lucifer falling from Heaven. That's what they say, anyway. I've never SEEN the Transgressor.
 
+But the pages talk, you know.
+
+*[Uh...]
+->example_knot_1d
 === example_knot_1c ===
-tk tk tk tk tk
+I HAVEN'T HAD A FRIEND IN ONE HUNDRED AND FIFTY YEARS
+*[AAAAHHHHHHH]
+->example_knot_1d
+=== example_knot_1d ===
+
 ->END

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
     public NPCController _npcController;
+    public GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +37,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         cursorSprite.transform.position = Input.mousePosition;
-
         if (Input.GetMouseButtonUp(1))
         {
+
             ChangeCursor();
         }
-        
+
         if (Input.GetMouseButtonUp(0))
         {
             switch (cursorIndex)
@@ -51,10 +52,12 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 1:
                     Debug.Log("You examine the object.");
+                    _gameManager.DisplayBook();
+                    cursorSprite.transform.SetAsLastSibling();
                     break;
                 case 2:
                     Debug.Log("It doesn't say much.");
-                    _npcController.DisplayTextBox();
+                    _gameManager.DisplayTextBox();
                     cursorSprite.transform.SetAsLastSibling();
                     break;
                 case 3:

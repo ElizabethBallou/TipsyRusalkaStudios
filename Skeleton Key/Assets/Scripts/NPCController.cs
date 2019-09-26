@@ -20,29 +20,5 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    public void DisplayTextBox()
-    {
-        //if the story is idle, then the text box can appear. If it isn't idle, we can't instantiate a second text box
-            if (_inkManager.CurrentStoryState == StoryState.IdleStory)
-            {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                Collider2D collider = Physics2D.OverlapPoint(mousePos);
-
-                if (collider != null)
-                {
-                    if (collider.gameObject.CompareTag("NPC"))
-                    {
-                        ClickNPC();
-                    }
-                }
-            }
-    }
-
-    public void ClickNPC()
-    {
-        _inkManager.OpenDialoguePanel();
-
-    }
+    
 }

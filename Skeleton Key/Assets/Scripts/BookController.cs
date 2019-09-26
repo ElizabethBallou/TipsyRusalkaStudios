@@ -3,29 +3,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 using UnityEngine.UI;
+using VSCodeEditor;
 using Random = System.Random;
 
 public class BookController : MonoBehaviour
 {
-    private Text bookText;
+    private GameObject myBook;
+    public TextMeshProUGUI leftPageText;
+    public TextMeshProUGUI rightPageText;
+    private string sourceText;
     private string RandomString;
     public int ChunkSize; //how many chunks will be printed into the text object
     public int WordChunkLength = 0; //how many words are in each chunk
     private List<string> splitString = new List<string>();
     private int SpaceCounter = 0;
     private string tempString;
+    public Button leftButton;
+    public Button rightButton;
+    public Button exitButton;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        bookText = GameObject.FindWithTag("BookText")
-            .GetComponent<Text>(); //locate the text object we will be using to display the book
-        string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; //locate the source .txt file
-        string sourceText = File.ReadAllText(sourceTextPath); //get all the text of the book
+        //load in all the ui objects
+        //myBook = Instantiate(bookPrefab, uiCanvas.transform);
+        //leftPageText = GameObject.Find("LeftPage").GetComponent<TextMeshProUGUI>();
+        //locate the text objects we will be using to display the book
+        //rightPageText = GameObject.Find("RightPage").GetComponent<TextMeshProUGUI>();
+        //leftButton = GameObject.Find("RandomizeLeft").GetComponent<Button>();
+        //rightButton = GameObject.Find("RandomizeRight").GetComponent<Button>();
+        //exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        //add appropriate listeners to buttons
+        //leftButton.onClick.AddListener(()=>ChooseRandomString());
+        //rightButton.onClick.AddListener(()=>ChooseRandomString());
+        //exitButton.onClick.AddListener(()=>OnButtonExit());
+        
+        //locate the source .txt file
+        string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; 
+        //get all the text of the book
+        sourceText = File.ReadAllText(sourceTextPath);
         Debug.Log("loaded Arabian Nights");
-        bookText.text = sourceText;
-        Debug.Log("The number of characters in this book is " + sourceText.Length);
         for (int i = 0; i < sourceText.Length; i++)
         {
             // add to tempString the character that's being run through in this for loop
@@ -44,28 +63,35 @@ public class BookController : MonoBehaviour
             }
         }
         
-        //splitString = sourceText.Split(new string[] {" "}, StringSplitOptions.None); //split the text into an array of 1-word strings
-        //Debug.Log("The number of words in this book is " + splitString.Length);
     }
     
     // Update is called once per frame
-    void Update()
+    public void SummonBook()
     {
-    }
-
-    public void OnButtonClick()
-    {
+        gameObject.SetActive(true);
         ChooseRandomString();
     }
 
     public void ChooseRandomString()
     {
-        bookText.text = ""; //resets the text
+        leftPageText.text = ""; //resets the text
+        rightPageText.text = "";
 
         for (int i = 0; i < ChunkSize; i++)
         {
             RandomString = splitString[UnityEngine.Random.Range(0, splitString.Count)];
-            bookText.text = bookText.text + RandomString; 
+            leftPageText.text = leftPageText.text + RandomString; 
         }
+
+        for (int i = 0; i < ChunkSize; i++)
+        {
+            RandomString = splitString[UnityEngine.Random.Range(0, splitString.Count)];
+            rightPageText.text = rightPageText.text + RandomString;
+        }
+    }
+
+    public void OnButtonExit()
+    {
+        gameObject.SetActive(false);
     }
 }

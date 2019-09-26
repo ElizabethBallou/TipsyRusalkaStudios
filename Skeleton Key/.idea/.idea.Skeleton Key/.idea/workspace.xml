@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.ink" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.ink" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2DTextures/EnvironmentArt/parchment.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2DTextures/EnvironmentArt/parchment.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,24 +22,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/StoryState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ATC prototype/Assets/Scripts/InkManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BookController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Controller.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/StoryParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Fonts/ADega Serif Regular SDF.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Container.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../RedoneShakespeare/Something Sexy/Assets/Scripts/YorickController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/InkConversationUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Story.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ATC prototype/Assets/Scripts/InkManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -50,11 +51,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -125,7 +126,10 @@
       <workItem from="1568917101014" duration="11158000" />
       <workItem from="1568987146228" duration="1664000" />
       <workItem from="1569265653866" duration="1570000" />
-      <workItem from="1569344932048" duration="5738000" />
+      <workItem from="1569344932048" duration="7644000" />
+      <workItem from="1569357531596" duration="3690000" />
+      <workItem from="1569433554069" duration="2060000" />
+      <workItem from="1569451429285" duration="11105000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -190,7 +194,28 @@
       <option name="project" value="LOCAL" />
       <updated>1569345108992</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="exit button working!">
+      <created>1569351495810</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1569351495810</updated>
+    </task>
+    <task id="LOCAL-00011" summary="partway through making the randomized book an object that appears on click">
+      <created>1569362398989</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1569362398989</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changed the code architecture for the Book Controller and Ink Controller">
+      <created>1569519266434</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1569519266434</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +247,10 @@
     <MESSAGE value="BookController is now pulling words in chunks of 5" />
     <MESSAGE value="Text box now properly loading in when you click on an NPC. Text changed over to TMP." />
     <MESSAGE value="made Dirty Hands Jane a prefab ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="made Dirty Hands Jane a prefab ;)" />
+    <MESSAGE value="exit button working!" />
+    <MESSAGE value="partway through making the randomized book an object that appears on click" />
+    <MESSAGE value="changed the code architecture for the Book Controller and Ink Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the code architecture for the Book Controller and Ink Controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -243,19 +271,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs</url>
-          <line>80</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" initialLine="80">
-            <startOffsets>
-              <option value="2370" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2404" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
