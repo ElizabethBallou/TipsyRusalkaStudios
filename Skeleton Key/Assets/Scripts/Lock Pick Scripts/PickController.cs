@@ -9,7 +9,9 @@ public class PickController : MonoBehaviour
     public float forceMultiplier;
     public float speed = 0.1f;
     public Collider2D keyhole;
-    
+
+    public GameObject winUI;
+
     private Camera _camera;
     private Rigidbody2D _rb2d;
     public Transform startPos;
@@ -48,6 +50,11 @@ public class PickController : MonoBehaviour
         {
             _reset = false;
         }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            PlayAgain();
+        }
         
         _rb2d.AddRelativeForce(new Vector2(0, v));
     }
@@ -55,10 +62,11 @@ public class PickController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider == keyhole) {
-            SceneManager.LoadScene(0);
+            Win();
         }
         else {
             Reset();
+            TimeManager.timeManager.ResetTimer();
         }
     }
 
@@ -69,5 +77,16 @@ public class PickController : MonoBehaviour
         transform.position = startPos.position;
         _rb2d.gameObject.transform.rotation = _defaultRotation;
         _rb2d.velocity = Vector3.zero;
+    }
+
+    public void Win()
+    {
+        winUI.SetActive(true);
+        TimeManager.timeManager.tickingSound.Stop();
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(0);
     }
 }

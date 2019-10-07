@@ -8,7 +8,7 @@ public class SlidingDoorManager : MonoBehaviour
     public Transform pos1;
     public Transform pos2;
 
-    private Vector3 _newPos;
+    public Vector3 _newPos;
 
     public string currentState;
     
@@ -17,13 +17,13 @@ public class SlidingDoorManager : MonoBehaviour
     
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(8, 9);
         ChangeTargetPos();
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        Physics.IgnoreLayerCollision(8, 9);
         slidingWall.position = Vector3.Lerp(slidingWall.position, _newPos, speed * Time.deltaTime);
     }
 

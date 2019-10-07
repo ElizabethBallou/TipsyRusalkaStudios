@@ -19,18 +19,19 @@ public class TimeManager : MonoBehaviour
             timeLeft = value;
             if (timeLeft <= -1)
             {
-                timeLeft = 60;
-                imageTimer = 5f;
-                timerImage.fillAmount = 1f;
+                ResetTimer();
                 PickController.Instance.Reset();
             }
         }
     }
+
+    public static TimeManager timeManager;
     
     // Start is called before the first frame update
     void Start()
     {
         tickingSound.PlayDelayed(1.7f);
+        timeManager = this;
     }
 
     // Update is called once per frame
@@ -55,5 +56,12 @@ public class TimeManager : MonoBehaviour
             timerImage.fillAmount -= 0.082f;
             imageTimer = 5;
         }
+    }
+
+    public void ResetTimer()
+    {
+        timeLeft = 60;
+        imageTimer = 5f;
+        timerImage.fillAmount = 1f;
     }
 }
