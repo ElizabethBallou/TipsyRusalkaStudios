@@ -1,62 +1,90 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CalculateSpace : MonoBehaviour
 {
-    /*public Transform nw;
+    private Camera cam;
+
+    #region RoomTransforms
+    public Transform nw;
     public Transform ne;
-    public Transform se;
-    public Transform sw;
-    public Transform player;
+    public Transform trough;
+    #endregion
+    
+    public Vector2 newPos;
+    public Vector2 midpoint;
+    public Vector2 origin;
+    public float radius;
+    public float distance;
 
-    private float angleLeft;
-    private float angleRight;
-
-    private Vector3 minScale = new Vector3(0.16f, 0.16f, 0.16f);
-    private Vector3 maxScale = new Vector3(0.45f, 0.45f, 0.45f);
-
+    public static CalculateSpace instance;
     // Start is called before the first frame update
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    
     void Start()
     {
-        angleLeft = Mathf.Atan( (nw.position.x - sw.position.x)/(nw.position.y - sw.position.y)) * Mathf.Rad2Deg;
-        angleRight = Mathf.Atan((ne.position.x - se.position.x)/(ne.position.y - se.position.y)) * Mathf.Rad2Deg;
+        cam = Camera.main;
         
-        ScalePlayer();
-
-        //print(angleLeft);
-        //print(angleRight);
+        CalculateHorizon();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetTargetPosition()
     {
-        if (PlayerController.instance.isMoving)
-        {
-            //PlayerWithinBoundsCheck();
-            ScalePlayer();
-        }
+        newPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        distance = Vector2.Distance(newPos, origin);
     }
     
-    public void TargetPosCheck()
+    public void DistanceCheck()
     {
-        var targetPos = PlayerController.instance.newPos;
+        distance = Vector2.Distance(newPos, origin);
+    }
+
+    public bool TargetIsFloor()
+    {
+        #region Old code for angles of trapezoid-shaped room.
+        //float angleLeft = Mathf.Atan( (nw.position.x - sw.position.x)/(nw.position.y - sw.position.y)) * Mathf.Rad2Deg;
+        //float angleRight = Mathf.Atan((ne.position.x - se.position.x)/(ne.position.y - se.position.y)) * Mathf.Rad2Deg;
+        
+        /*var targetPos = newPos;
         var targetAngleLeft = Mathf.Atan((nw.position.x - targetPos.x)/(nw.position.y - targetPos.y)) * Mathf.Rad2Deg;
         var targetAngleRight = Mathf.Atan((ne.position.x - targetPos.x)/(ne.position.y - targetPos.y)) * Mathf.Rad2Deg;
-        //print("left: " + playerAngleLeft);
-        //print("right: " + playerAngleRight);
-        
+
         if (targetAngleLeft >= angleLeft || targetAngleRight <= angleRight || targetPos.y > nw.position.y)
         {
-            PlayerController.instance.newPos = player.transform.position;
-            //print("You've crossed the line mister!");
-        }
+            return true;
+        }*/
+        #endregion
+
+        return (distance > radius && newPos.y < nw.position.y);
     }
-    
-    public void ScalePlayer(){
-        var lerpRate = ((player.transform.position.y - sw.position.y) / (nw.position.y - sw.position.y));
-        var playerScale = Vector3.Lerp(maxScale, minScale, lerpRate);
-        player.localScale = playerScale;
+
+    public void CalculateHorizon()
+    {
+        midpoint = new Vector2((nw.position.x + ne.position.x)/2, (nw.position.y + ne.position.y)/2);
         
-    }*/
+        trough.transform.position = new Vector2(midpoint.x, trough.transform.position.y);
+        
+        float yCoordinate = (Mathf.Pow(nw.position.x, 2) - 2*nw.position.x*midpoint.x + Mathf.Pow(nw.position.y, 2) - Mathf.Pow(trough.position.x, 2) + 2*trough.position.x*midpoint.x - Mathf.Pow(trough.position.y, 2))
+                            /(2*nw.position.y - 2*trough.position.y);
+        //Debug.Log("y-coordinate: " + yCoordinate);
+
+        origin = new Vector2(midpoint.x, yCoordinate);
+        
+        radius = Mathf.Sqrt((Mathf.Pow((nw.position.x - midpoint.x), 2) + (Mathf.Pow(nw.position.y - yCoordinate, 2))));
+        //Debug.Log("radius: " + radius);
+    }
 }
