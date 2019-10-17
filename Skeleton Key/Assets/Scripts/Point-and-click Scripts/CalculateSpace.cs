@@ -23,7 +23,7 @@ public class CalculateSpace : MonoBehaviour
 
     public static CalculateSpace instance;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {
@@ -33,7 +33,10 @@ public class CalculateSpace : MonoBehaviour
         {
             Destroy(this);
         }
-        
+    }
+    
+    void Start()
+    {
         cam = Camera.main;
         
         CalculateHorizon();
