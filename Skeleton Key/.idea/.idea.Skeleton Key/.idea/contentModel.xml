@@ -107,6 +107,14 @@
             <e p="Item.cs" t="Include" />
             <e p="ItemDatabase.cs" t="Include" />
           </e>
+          <e p="Lock Pick Scripts" t="Include">
+            <e p="MazeController.cs" t="Include" />
+            <e p="PickController.cs" t="Include" />
+            <e p="PinManager.cs" t="Include" />
+            <e p="RotateScript.cs" t="Include" />
+            <e p="SlidingDoorManager.cs" t="Include" />
+            <e p="TimeManager.cs" t="Include" />
+          </e>
           <e p="NPCController.cs" t="Include" />
           <e p="Point-and-click Scripts" t="Include">
             <e p="CalculateSpace.cs" t="Include" />

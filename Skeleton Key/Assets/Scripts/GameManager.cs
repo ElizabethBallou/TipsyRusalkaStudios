@@ -53,10 +53,7 @@ public class GameManager : MonoBehaviour
     
     public void DisplayTextBox()
     {
-        //if the story is idle, then the text box can appear. If it isn't idle, we can't instantiate a second text box
-        if (_inkManager.CurrentStoryState == StoryState.IdleStory)
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Collider2D collider = Physics2D.OverlapPoint(mousePos);
 
@@ -67,6 +64,5 @@ public class GameManager : MonoBehaviour
                     _inkManager.OpenDialoguePanel();
                 }
             }
-        }
     }
 }

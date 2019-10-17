@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2DTextures/EnvironmentArt/parchment.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2DTextures/EnvironmentArt/parchment.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/GameManager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/GameManager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/Music.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +45,6 @@
     <setting file="file://D:/Downloads/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Story.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ATC prototype/Assets/Scripts/InkManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -51,11 +52,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +130,11 @@
       <workItem from="1569344932048" duration="7644000" />
       <workItem from="1569357531596" duration="3690000" />
       <workItem from="1569433554069" duration="2060000" />
-      <workItem from="1569451429285" duration="11105000" />
+      <workItem from="1569451429285" duration="14340000" />
+      <workItem from="1570732268751" duration="6580000" />
+      <workItem from="1570745909934" duration="1405000" />
+      <workItem from="1570933919144" duration="1315000" />
+      <workItem from="1571334048496" duration="3726000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -215,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569519266434</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="the book and all its buttons are working correctly!">
+      <created>1569526546539</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1569526546539</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +262,8 @@
     <MESSAGE value="exit button working!" />
     <MESSAGE value="partway through making the randomized book an object that appears on click" />
     <MESSAGE value="changed the code architecture for the Book Controller and Ink Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the code architecture for the Book Controller and Ink Controller" />
+    <MESSAGE value="the book and all its buttons are working correctly!" />
+    <option name="LAST_COMMIT_MESSAGE" value="the book and all its buttons are working correctly!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
