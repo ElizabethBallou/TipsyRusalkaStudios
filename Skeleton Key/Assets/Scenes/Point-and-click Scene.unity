@@ -223,7 +223,6 @@ GameObject:
   - component: {fileID: 140362422}
   - component: {fileID: 140362426}
   - component: {fileID: 140362424}
-  - component: {fileID: 140362425}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -288,8 +287,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140362421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.972677, y: -18.6, z: 58.141663}
-  m_LocalScale: {x: 4.23058, y: 4.23058, z: 4.23058}
+  m_LocalPosition: {x: 11.99, y: -22.72, z: 58.141663}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 254347082}
   m_RootOrder: 0
@@ -315,32 +314,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &140362425
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140362421}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.026065141, y: 0.14693283}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.46, y: 1.35}
-    newSize: {x: 4.7, y: 4.7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.666731, y: 1.666731}
-  m_EdgeRadius: 0
 --- !u!114 &140362426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,8 +333,8 @@ MonoBehaviour:
   speed: 10
   northWall: {fileID: 477743228}
   southWall: {fileID: 1658944698}
-  playerMinScale: {x: 1, y: 1}
-  playerMaxScale: {x: 2.122656, y: 2.122656}
+  playerMinScale: {x: 2.5, y: 2.5}
+  playerMaxScale: {x: 6.25, y: 6.25}
 --- !u!1 &160343277
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,8 +466,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
@@ -917,8 +888,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1404,8 +1373,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1734,7 +1701,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1314807597303906194, guid: 2d11154db085f0249a79577e038a35f2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
