@@ -154,11 +154,11 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, CalculateSpace.instance.newPos, Time.deltaTime * speed);
         if(CalculateSpace.instance.newPos.x < transform.position.x)
         {
-            playerSprite.flipX = true;
+            playerSprite.flipX = false;
         }
         if(CalculateSpace.instance.newPos.x > transform.position.x)
         {
-            playerSprite.flipX = false;
+            playerSprite.flipX = true;
         }
     }
     
