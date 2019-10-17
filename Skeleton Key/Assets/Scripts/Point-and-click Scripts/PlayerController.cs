@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     public Image cursorSprite;
     public int cursorIndex;
     public float speed;
-    public Collider2D door;
-    public Collider2D bookOfBabel;
-    public Collider2D bone;
+    //public Collider2D door;
+    //public Collider2D bookOfBabel;
+    //public Collider2D bone;
 
     #region PlayerScaling
     public Transform northWall;
@@ -76,10 +76,10 @@ public class PlayerController : MonoBehaviour
             Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            if (hit.collider == door)
+            /*if (hit.collider == door)
             {
                 SceneManager.LoadScene(1);
-            }
+            }*/
         }
 
         switch (cursorIndex)
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
         Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
         
-        if (hit.collider == bookOfBabel)
+        /*if (hit.collider == bookOfBabel)
         {
             if(Input.GetMouseButtonUp(0))
             {
@@ -194,9 +194,9 @@ public class PlayerController : MonoBehaviour
                 Inventory.instance.AddItem(0);
                 Destroy(bone.GetComponent<SpriteRenderer>());
             }
-        }
+        }*/
 
-        else if (hit.collider == null)
+        if (hit.collider == null)
         {
             Debug.Log("It doesn't budge.");
         }

@@ -118,6 +118,7 @@
           <e p="NPCController.cs" t="Include" />
           <e p="Point-and-click Scripts" t="Include">
             <e p="CalculateSpace.cs" t="Include" />
+            <e p="CameraFollow.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
           </e>
         </e>
