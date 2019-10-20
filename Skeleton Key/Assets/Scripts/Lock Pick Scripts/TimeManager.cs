@@ -26,12 +26,16 @@ public class TimeManager : MonoBehaviour
     }
 
     public static TimeManager timeManager;
-    
+
+    private void Awake()
+    {
+        timeManager = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         tickingSound.PlayDelayed(1.7f);
-        timeManager = this;
     }
 
     // Update is called once per frame
