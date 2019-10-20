@@ -17,7 +17,7 @@ public class InkManager : MonoBehaviour
 	public Image blackBackground;
 	public Image textboxPrefab;
 	private Canvas uiCanvas;
-	public Image dialogueBox;
+	private Image dialogueBox;
 	private TextMeshProUGUI dialogueText;
 	private string currentText;
 	private Button choicebutton1;
@@ -200,6 +200,7 @@ public class InkManager : MonoBehaviour
 	public void ExitTextBox()
 	{
 		dialogueBox.gameObject.SetActive(false);
+		blackBackground.gameObject.SetActive(false);
 	}
 
 }
