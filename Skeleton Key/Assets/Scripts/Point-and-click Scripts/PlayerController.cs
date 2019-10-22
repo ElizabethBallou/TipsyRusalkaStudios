@@ -89,12 +89,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case 1:
                 Debug.Log("You examine the object.");
-                _gameManager.DisplayBook();
+                _gameManager.DisplayItem();
                 cursorSprite.transform.SetAsLastSibling();
                 break;
             case 2:
                 Debug.Log("It doesn't say much.");
-                _gameManager.DisplayTextBox();
+                _gameManager.DisplayItem();
                 cursorSprite.transform.SetAsLastSibling();
                 break;
             case 3:

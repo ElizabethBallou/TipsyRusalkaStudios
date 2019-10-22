@@ -53,43 +53,44 @@ public class InkManager : MonoBehaviour
 		//deactivate the UI so it doesn't get in the way
 		blackBackground.gameObject.SetActive(false);
 		dialogueBox.gameObject.SetActive(false);
-		
-		TextAsset storyFile = Resources.Load<TextAsset>("Letizia conversation files");
+		//
+		//
+		//
+		//
+		TextAsset storyFile = Resources.Load<TextAsset>("master_dialogue_file");
 		Debug.Log("Story file loaded");
 		story = new Story(storyFile.text);
 	}
 
-	public void OpenDialoguePanel()
+	public void OpenDialoguePanel(string characterName)
 	{
-		Debug.Log("I'm opening");
 		blackBackground.gameObject.SetActive(true);
 		dialogueBox.gameObject.SetActive(true);
 		choicebutton1.gameObject.SetActive(false);
 		choicebutton2.gameObject.SetActive(false);
 		choicebutton3.gameObject.SetActive(false);
 		continuebutton.gameObject.SetActive(false);
-		
-		KnotSelection();
+
+
+		KnotSelection(characterName);
 	}
 
-	private void KnotSelection()
+	private void KnotSelection(string characterName)
 	{
-		Debug.Log(story.variablesState["seen_this_character"]);
-		Debug.Log(story.variablesState["seen_this_character"].GetType());
-
-		bool seenThisCharacter = (bool) EvaluateInkBool("seen_this_character");
+		bool seenThisCharacter = (bool) EvaluateInkBool("seen_" + characterName);
 		if (seenThisCharacter == false)
 		{
-			story.ChoosePathString("first_conversation_knot");
+			story.ChoosePathString(characterName + "_first_conversation_knot");
 		}
 		
 		else
 		{
-			story.ChoosePathString("default_conversation_knot");
+			story.ChoosePathString(characterName + "_default_conversation_knot");
 		}
 		TextAppearStoryUpdate();
 	}
 
+	//For some reason, Unity reads Ink bools as ints (0, 1). This function converts them into bools...which is what they should be (grr)
 	public bool EvaluateInkBool(string inkVariableName)
 	{
 		int inkNumber = (int) story.variablesState[inkVariableName];
@@ -118,11 +119,7 @@ public class InkManager : MonoBehaviour
 		}
 
 		PrintStory();
-		if (!story.canContinue && story.currentChoices.Count == 0)
-		{
-			exitbutton.gameObject.SetActive(true);
-		}
-		
+
 	}
 	public void ShowChoiceButtons()
 	{
@@ -216,6 +213,13 @@ public class InkManager : MonoBehaviour
 							break;
 					}
 				}
+			}
+		}
+		if (!story.canContinue && story.currentChoices.Count == 0)
+		{
+			if (textDone)
+			{
+				exitbutton.gameObject.SetActive(true);
 			}
 		}
 	}

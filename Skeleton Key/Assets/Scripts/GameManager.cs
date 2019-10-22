@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +28,12 @@ public class GameManager : MonoBehaviour
         
         newBook.SetActive(false);
         _bookController = newBook.GetComponent<BookController>();
+
+    }
+
+    public void Start()
+    {
+        NPCController.instance.RoomNPCSetter();
     }
 
     // Update is called once per frame
@@ -35,37 +42,24 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void DisplayBook()
+    public void DisplayItem()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Collider2D collider = Physics2D.OverlapPoint(mousePos);
-
-        if (collider != null)
-        {
-            Debug.Log(collider.gameObject.tag);
-            if (collider.gameObject.CompareTag("book"))
-            {
-                _bookController.SummonBook();
-            }
-        }
-    }
-    
-    public void DisplayTextBox()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            //Collider2D collider = Physics2D.OverlapPoint(mousePos);
             RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos, Vector3.forward, 1000f);
             for (int i = 0; i < hit.Length; i++)
             {
                 if (hit[i].collider != null)
                 {
-                    Debug.Log("we are hitting " + hit[i].collider.name);
                     if (hit[i].collider.gameObject.CompareTag("NPC"))
                     {
-                        Debug.Log("you clicked an NPC");
-                        _inkManager.OpenDialoguePanel();
+                        //this may not always be the case BUT FOR NOW IT IS
+                        _inkManager.OpenDialoguePanel(hit[i].collider.name);
+                    }
+                    
+                    else if (hit[i].collider.gameObject.CompareTag("book"))
+                    {
+                        _bookController.SummonBook();
                     }
                 }
             }

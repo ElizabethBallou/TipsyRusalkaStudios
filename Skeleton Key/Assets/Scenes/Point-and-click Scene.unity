@@ -718,9 +718,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
         type: 3}
+      propertyPath: Keys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
+        type: 3}
+      propertyPath: Values.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
+        type: 3}
       propertyPath: _inkManager
       value: 
       objectReference: {fileID: 1727155459}
+    - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
+        type: 3}
+      propertyPath: Keys.Array.data[0]
+      value: Letizia
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
+        type: 3}
+      propertyPath: Values.Array.data[0].text
+      value: 
+      objectReference: {fileID: 4900000, guid: df1514daba2fbe64fae287ec081181d8, type: 3}
+    - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
+        type: 3}
+      propertyPath: Keys.Array.data[1]
+      value: Miguel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172715804489141566, guid: 04b2edd4bbad3504699063a94b2c3591,
+        type: 3}
+      propertyPath: Values.Array.data[1].text
+      value: 
+      objectReference: {fileID: 4900000, guid: 81a8c5c3ef4b9f84d83860b21aff66dc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b2edd4bbad3504699063a94b2c3591, type: 3}
 --- !u!1 &767408809
@@ -1602,8 +1632,8 @@ Transform:
   m_Father: {fileID: 254347082}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1931790421
-PolygonCollider2D:
+--- !u!61 &1931790421
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1625,55 +1655,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.40313348, y: -0.5352931}
-      - {x: -0.0065857265, y: -0.46360266}
-      - {x: 0.043731075, y: -0.28847763}
-      - {x: 0.05107354, y: -0.27689585}
-      - {x: 0.14455596, y: -0.28531405}
-      - {x: 0.20811148, y: -0.29934943}
-      - {x: 0.35, y: -0.08}
-      - {x: 0.35999998, y: -0.049999997}
-      - {x: 0.35, y: -0.02}
-      - {x: 0.28, y: -0.02}
-      - {x: 0.29999998, y: 0.01}
-      - {x: 0.13956149, y: -0.4490449}
-      - {x: 0.21924394, y: -0.5148065}
-      - {x: 0.35, y: -0.39}
-      - {x: 0.21082522, y: -0.5284178}
-      - {x: 0.56, y: -0.53999996}
-      - {x: 0.7072136, y: -0.5301899}
-      - {x: 0.7303782, y: -0.10088532}
-      - {x: 0.698797, y: 0.060885914}
-      - {x: 0.34, y: 0.22999999}
-      - {x: 0.22999999, y: 0.29}
-      - {x: 0.17, y: 0.39999998}
-      - {x: 0.07, y: 0.53999996}
-      - {x: -0.13, y: 0.53999996}
-      - {x: -0.31, y: 0.45999998}
-      - {x: -0.35, y: 0.39999998}
-      - {x: -0.35999998, y: 0.35}
-      - {x: -0.26, y: 0.26999998}
-      - {x: -0.48, y: 0.13}
-      - {x: -0.58, y: 0.06}
-      - {x: -0.7165178, y: 0.087213576}
-      - {x: -0.7342381, y: -0.14999975}
-      - {x: -0.67632866, y: -0.54088616}
-      - {x: -0.59999996, y: -0.53999996}
-      - {x: -0.38, y: -0.53999996}
-      - {x: 0.012906594, y: -0.46790975}
-      - {x: 0.20000596, y: -0.5139615}
-      - {x: 0.008725614, y: -0.48024985}
-    - - {x: 0.15048374, y: -0.51794124}
-      - {x: 0.10153118, y: -0.42209503}
-      - {x: 0.08913118, y: -0.43919575}
-      - {x: 0.070160165, y: -0.50092566}
-      - {x: 0.108991355, y: -0.49495792}
-    - - {x: 0.13165356, y: -0.50485855}
-      - {x: 0.114757285, y: -0.3623374}
-      - {x: 0.076119475, y: -0.42048907}
-      - {x: 0.015050687, y: -0.5022862}
+  serializedVersion: 2
+  m_Size: {x: 1.26, y: 1.08}
+  m_EdgeRadius: 0
 --- !u!212 &1931790422
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,9 +1,9 @@
-VAR character_name = "Old Librarian"
-VAR seen_this_character = false
+VAR seen_Letizia = false
 
--> first_conversation_knot
-=== first_conversation_knot ===
-~ seen_this_character = true
+-> Letizia_first_conversation_knot
+=== Letizia_first_conversation_knot ===
+~ character_name = "Old Librarian"
+~ seen_Letizia = true
     Who's there? Come closer. I can't see as well as I used to.
     *(Ende_thinks_corpse) [I thought you were dead!]
         -> Ende_is_surprised
@@ -92,6 +92,6 @@ VAR seen_this_character = false
         light me a fire please
         -> DONE
         
-=== default_conversation_knot ===
+=== Letizia_default_conversation_knot ===
     This is default text that appears after you have already spoken to Letizia once.
     -> DONE
