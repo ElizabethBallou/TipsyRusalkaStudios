@@ -57,7 +57,7 @@ public class InkManager : MonoBehaviour
 		choicebutton2.gameObject.SetActive(false);
 		choicebutton3.gameObject.SetActive(false);
 		continuebutton.gameObject.SetActive(false);
-		TextAsset storyFile = Resources.Load<TextAsset>("Skeleton Key inky file");
+		TextAsset storyFile = Resources.Load<TextAsset>("Letizia conversation files");
 		Debug.Log("Story file loaded");
 		story = new Story(storyFile.text);
 
@@ -74,11 +74,11 @@ public class InkManager : MonoBehaviour
 		dialogueText.text = "";
 		while (story.canContinue)
 		{
-			currentText += story.Continue();
+			currentText += story.ContinueMaximally();
 		}
 
 		PrintStory();
-		if (!story.canContinue && story.currentChoices?.Count == 0)
+		if (!story.canContinue && story.currentChoices.Count == 0)
 		{
 			exitbutton.gameObject.SetActive(true);
 		}
@@ -92,6 +92,7 @@ public class InkManager : MonoBehaviour
 			
 			if (story.currentChoices.Count > 0)
 			{
+				continuebutton.gameObject.SetActive(false);
 				for (int i = 0; i < story.currentChoices.Count; i++)
 				{
 					Choice choice = story.currentChoices[i];
@@ -147,6 +148,7 @@ public class InkManager : MonoBehaviour
 		{
 			for (int i = maxCharactersPerBox; i < currentText.Length; i++)
 			{
+				//Debug.Log("loop number " + i);
 				string subStr = currentText.Substring(0, i);
 				dialogueText.text = subStr;
 				
@@ -159,18 +161,24 @@ public class InkManager : MonoBehaviour
 					switch (dialogueText.text[dialogueText.text.Length - 1])
 					{
 						case '.':
+							continuebutton.gameObject.SetActive(true);
 							return;
 						case ',':
+							continuebutton.gameObject.SetActive(true);
 							return;
 						case '-':
+							continuebutton.gameObject.SetActive(true);
 							return;
 						case '!':
+							continuebutton.gameObject.SetActive(true);
 							return;
 						case '?':
+							continuebutton.gameObject.SetActive(true);
 							return;
-					
+						default:
+							Debug.Log("No sentence ender here..");
+							break;
 					}
-					continuebutton.gameObject.SetActive(true);
 				}
 			}
 		}
