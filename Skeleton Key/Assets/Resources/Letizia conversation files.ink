@@ -1,7 +1,9 @@
 VAR character_name = "Old Librarian"
+VAR seen_this_character = false
 
 -> first_conversation_knot
 === first_conversation_knot ===
+~ seen_this_character = true
     Who's there? Come closer. I can't see as well as I used to.
     *(Ende_thinks_corpse) [I thought you were dead!]
         -> Ende_is_surprised
@@ -60,16 +62,16 @@ VAR character_name = "Old Librarian"
         {Ende_nationality: This is} The Library of Forking Paths, which is the only place that ever meant anything. If you can find the meaning, that is. I never have.
             -> Ende_asks_questions
     = Ende_asks_questions
-            * What do you mean, "the only place that ever meant anything?"
+            * [What do you mean, "the only place that ever meant anything?"]
                 -> only_place_with_meaning
-            * Why do none of the books make sense?
+            * [Why do none of the books make sense?]
                 -> books_dont_make_sense
-            * How long have you been here?
+            * [How long have you been here?]
                 -> how_long_letizia_in_library
             * -> Letizia_gives_quest
         = only_place_with_meaning
             Why, I mean that these books contain all the answers.
-            *Answers to what?<>
+            *[Answers to what?]<>
             -   To everything. Every question anyone has ever had. You must not have been here long, or you would know that.
                 -> Ende_asks_questions
         = books_dont_make_sense
@@ -83,9 +85,13 @@ VAR character_name = "Old Librarian"
                 * * (Ende_been_here_too_long) [Too long already.]
                 - - {Ende_been_here_too_long: That's what they all say, you know, when they first arrive. Nobody understands what 'too long' means until they've been inside for a while. }
                 Time doesn't move forward in a predictable way inside the Library, so we use Chapters to keep track of the Library's history. Each Chapter contains a beginning, a middle, and an end. Just as they do in a book.
-                    * * * What Chapter are we in now? <>
+                    * * * [What Chapter are we in now?] <>
                     - - - The Chapter of the Locked Doors. It has gone on for a long, long time.
                         ->Ende_asks_questions
     = Letizia_gives_quest
-    ->DONE
-    
+        light me a fire please
+        -> DONE
+        
+=== default_conversation_knot ===
+    This is default text that appears after you have already spoken to Letizia once.
+    -> DONE

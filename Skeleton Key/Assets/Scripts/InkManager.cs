@@ -19,6 +19,7 @@ public class InkManager : MonoBehaviour
 	private Canvas uiCanvas;
 	private Image dialogueBox;
 	private TextMeshProUGUI dialogueText;
+	private TextMeshProUGUI characterNameText;
 	private string currentText;
 	private Button choicebutton1;
 	private Button choicebutton2;
@@ -34,42 +35,81 @@ public class InkManager : MonoBehaviour
 		uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 		dialogueBox = Instantiate<Image>(textboxPrefab, uiCanvas.transform);
 		dialogueText = dialogueBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-		continuebutton = dialogueBox.transform.GetChild(1).GetComponent<Button>();
+		characterNameText = dialogueBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+		
+		continuebutton = dialogueBox.transform.GetChild(2).GetComponent<Button>();
 		exitbutton = dialogueBox.transform.Find("ExitIcon").GetComponent<Button>();
-		exitbutton.onClick.AddListener(()=>ExitTextBox());
 		choicebutton1 = GameObject.FindWithTag("ChoiceButton1").GetComponent<Button>();
-		choicebutton1.onClick.AddListener(()=>ChoiceButtonPressed(0));
 		choicebutton2 = GameObject.FindWithTag("ChoiceButton2").GetComponent<Button>();
-		choicebutton2.onClick.AddListener(()=>ChoiceButtonPressed(1));
 		choicebutton3 = GameObject.FindWithTag("ChoiceButton3").GetComponent<Button>();
+		
+		//add button click functionality to newly instantiated prefab
+		exitbutton.onClick.AddListener(()=>ExitTextBox());
+		choicebutton1.onClick.AddListener(()=>ChoiceButtonPressed(0));
+		choicebutton2.onClick.AddListener(()=>ChoiceButtonPressed(1));
 		choicebutton3.onClick.AddListener(()=>ChoiceButtonPressed(2));
 		continuebutton.onClick.AddListener(()=>ContinueButtonPressed());
 		
+		//deactivate the UI so it doesn't get in the way
 		blackBackground.gameObject.SetActive(false);
 		dialogueBox.gameObject.SetActive(false);
+		
+		TextAsset storyFile = Resources.Load<TextAsset>("Letizia conversation files");
+		Debug.Log("Story file loaded");
+		story = new Story(storyFile.text);
 	}
 
 	public void OpenDialoguePanel()
 	{
+		Debug.Log("I'm opening");
 		blackBackground.gameObject.SetActive(true);
 		dialogueBox.gameObject.SetActive(true);
 		choicebutton1.gameObject.SetActive(false);
 		choicebutton2.gameObject.SetActive(false);
 		choicebutton3.gameObject.SetActive(false);
 		continuebutton.gameObject.SetActive(false);
-		TextAsset storyFile = Resources.Load<TextAsset>("Letizia conversation files");
-		Debug.Log("Story file loaded");
-		story = new Story(storyFile.text);
+		
+		KnotSelection();
+	}
 
+	private void KnotSelection()
+	{
+		Debug.Log(story.variablesState["seen_this_character"]);
+		Debug.Log(story.variablesState["seen_this_character"].GetType());
+
+		bool seenThisCharacter = (bool) EvaluateInkBool("seen_this_character");
+		if (seenThisCharacter == false)
+		{
+			story.ChoosePathString("first_conversation_knot");
+		}
+		
+		else
+		{
+			story.ChoosePathString("default_conversation_knot");
+		}
 		TextAppearStoryUpdate();
 	}
 
-	private void Update()
+	public bool EvaluateInkBool(string inkVariableName)
 	{
+		int inkNumber = (int) story.variablesState[inkVariableName];
+		if (inkNumber == 0)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 	
 	public void TextAppearStoryUpdate()
 	{
+		choicebutton1.gameObject.SetActive(false);
+		choicebutton2.gameObject.SetActive(false);
+		choicebutton3.gameObject.SetActive(false);
+		continuebutton.gameObject.SetActive(false);
+		textDone = false;
 		currentText = "";
 		dialogueText.text = "";
 		while (story.canContinue)
@@ -82,25 +122,23 @@ public class InkManager : MonoBehaviour
 		{
 			exitbutton.gameObject.SetActive(true);
 		}
+		
 	}
 	public void ShowChoiceButtons()
 	{
 		//Do we have a choice? If so, run the following code...
-	if (story.currentChoices.Count > 0)
-	{
-			if (story.currentChoices == null) return;
+		if (story.currentChoices == null) return;
 			
 			if (story.currentChoices.Count > 0)
 			{
-				continuebutton.gameObject.SetActive(false);
 				for (int i = 0; i < story.currentChoices.Count; i++)
 				{
 					Choice choice = story.currentChoices[i];
 					switch (i)
 					{
 						case 0:
-							choicebutton1.GetComponent<TextMeshProUGUI>().text =
-								choice.text.Trim();
+							choicebutton1.GetComponentInChildren<TextMeshProUGUI>().text =
+								"- " + choice.text.Trim();
 							if (textDone)
 							{
 								choicebutton1.gameObject.SetActive(true);
@@ -108,16 +146,16 @@ public class InkManager : MonoBehaviour
 
 							break;
 						case 1:
-							choicebutton2.GetComponent<TextMeshProUGUI>().text =
-								choice.text.Trim();
+							choicebutton2.GetComponentInChildren<TextMeshProUGUI>().text =
+								"- " + choice.text.Trim();
 							if (textDone)
 							{
 								choicebutton2.gameObject.SetActive(true);
 							}
 							break;
 						case 2:
-							choicebutton3.GetComponent<TextMeshProUGUI>().text =
-								choice.text.Trim();
+							choicebutton3.GetComponentInChildren<TextMeshProUGUI>().text =
+								"- " + choice.text.Trim();
 							if (textDone)
 							{
 								choicebutton3.gameObject.SetActive(true);
@@ -126,16 +164,17 @@ public class InkManager : MonoBehaviour
 					}
 				}
 			}
-		}
 	}
 
 	//Function to print text letter-by-letter
 	private void PrintStory()
 	{
+		//set the character name, which may change mid-conversation
+		string characterNameString = (string) story.variablesState["character_name"];
+		characterNameText.text = characterNameString;
 		// if dialogue.text == "", do nothing
 		// remove dialogue.text from the front of current text, then do the rest
 		currentText = currentText.Substring(dialogueText.text.Length, currentText.Length - dialogueText.text.Length);
-		
 		if (currentText.Length < maxCharactersPerBox)
 		{
 			dialogueText.text = currentText;
@@ -161,9 +200,6 @@ public class InkManager : MonoBehaviour
 					switch (dialogueText.text[dialogueText.text.Length - 1])
 					{
 						case '.':
-							continuebutton.gameObject.SetActive(true);
-							return;
-						case ',':
 							continuebutton.gameObject.SetActive(true);
 							return;
 						case '-':
@@ -199,10 +235,6 @@ public class InkManager : MonoBehaviour
 	{
 		story.ChooseChoiceIndex(buttonNumber);
 		TextAppearStoryUpdate();
-		
-		choicebutton1.gameObject.SetActive(false);
-		choicebutton2.gameObject.SetActive(false);
-		choicebutton3.gameObject.SetActive(false);
 	}
 
 	public void ExitTextBox()

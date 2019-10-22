@@ -55,14 +55,20 @@ public class GameManager : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Collider2D collider = Physics2D.OverlapPoint(mousePos);
-
-            if (collider != null)
+            //Collider2D collider = Physics2D.OverlapPoint(mousePos);
+            RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos, Vector3.forward, 1000f);
+            for (int i = 0; i < hit.Length; i++)
             {
-                if (collider.gameObject.CompareTag("NPC"))
+                if (hit[i].collider != null)
                 {
-                    _inkManager.OpenDialoguePanel();
+                    Debug.Log("we are hitting " + hit[i].collider.name);
+                    if (hit[i].collider.gameObject.CompareTag("NPC"))
+                    {
+                        Debug.Log("you clicked an NPC");
+                        _inkManager.OpenDialoguePanel();
+                    }
                 }
             }
+            
     }
 }
