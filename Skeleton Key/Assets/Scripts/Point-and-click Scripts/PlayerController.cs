@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public NPCController npcController;
     
     public Animator anim;
+    public Animator endeAnim;
     public Image cursorSprite;
     public int cursorIndex;
     public float speed;
@@ -65,6 +66,12 @@ public class PlayerController : MonoBehaviour
         if (IsMoving())
         {
             ScalePlayer();
+            endeAnim.SetBool("isMoving", true);
+        }
+
+        if (!IsMoving())
+        {
+            endeAnim.SetBool("isMoving", false);
         }
         
     }
@@ -154,11 +161,11 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, CalculateSpace.instance.newPos, Time.deltaTime * speed);
         if(CalculateSpace.instance.newPos.x < transform.position.x)
         {
-            playerSprite.flipX = false;
+            playerSprite.flipX = true;
         }
         if(CalculateSpace.instance.newPos.x > transform.position.x)
         {
-            playerSprite.flipX = true;
+            playerSprite.flipX = false;
         }
     }
     

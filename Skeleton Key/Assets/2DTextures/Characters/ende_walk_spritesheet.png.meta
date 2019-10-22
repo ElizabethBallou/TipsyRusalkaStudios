@@ -1,0 +1,523 @@
+fileFormatVersion: 2
+guid: 67840353394ca4a87a5469ca4be6f0cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6534486383176343201
+    second: ende_walk_spritesheet_0
+  - first:
+      213: -5478590152975732209
+    second: ende_walk_spritesheet_1
+  - first:
+      213: -1645078368450791850
+    second: ende_walk_spritesheet_2
+  - first:
+      213: -1034767331988046061
+    second: ende_walk_spritesheet_3
+  - first:
+      213: 2416030488747713854
+    second: ende_walk_spritesheet_4
+  - first:
+      213: -6673638422800942544
+    second: ende_walk_spritesheet_5
+  - first:
+      213: 6760189942245900522
+    second: ende_walk_spritesheet_6
+  - first:
+      213: 6161519882529683450
+    second: ende_walk_spritesheet_7
+  - first:
+      213: -3737457105715405472
+    second: ende_walk_spritesheet_8
+  - first:
+      213: -2648935535416800864
+    second: ende_walk_spritesheet_9
+  - first:
+      213: 8022124820870531778
+    second: ende_walk_spritesheet_10
+  - first:
+      213: 2405720625461625059
+    second: ende_walk_spritesheet_11
+  - first:
+      213: -4295435257492277053
+    second: ende_walk_spritesheet_12
+  - first:
+      213: -6996260539774114305
+    second: ende_walk_spritesheet_13
+  - first:
+      213: 6291719390379607694
+    second: ende_walk_spritesheet_14
+  - first:
+      213: 9092155747782539019
+    second: ende_walk_spritesheet_15
+  - first:
+      213: -445116050215973637
+    second: ende_walk_spritesheet_16
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f375813c447954e8299bc2ce98ce03da
+      internalID: -6534486383176343201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032e32a7aa5054d869f232976ce78f66
+      internalID: -5478590152975732209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb3d294c1d81472ea459770ef88fd99
+      internalID: -1645078368450791850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 30
+        width: 75
+        height: 145
+      alignment: 9
+      pivot: {x: 0.47585896, y: -0.0000000920789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb56d14d236e74da9a6c90c35723b16a
+      internalID: -1034767331988046061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167759998a650413995df94b97bfeb81
+      internalID: 2416030488747713854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ace11a72a80b45b6aff4d803bb2dfcd
+      internalID: -6673638422800942544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e79572337a244484ae022ec1d102576
+      internalID: 6760189942245900522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 30
+        width: 75
+        height: 145
+      alignment: 9
+      pivot: {x: 0.48483562, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6bf1e6f43a941cd998522d471cadd5
+      internalID: 6161519882529683450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acef1492e72a498d819da3f5a2cac7f
+      internalID: -3737457105715405472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687f00b308a87420f911ac7481eccd23
+      internalID: -2648935535416800864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447fc0413aa5148b5a995706c7a85698
+      internalID: 8022124820870531778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d93b8171928b46a3bc525956be14ac0
+      internalID: 2405720625461625059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb8500f52fc14104a3caa001016631b
+      internalID: -4295435257492277053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e48f6f28b9f412ebf955efe9e72276
+      internalID: -6996260539774114305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 30
+        width: 75
+        height: 145
+      alignment: 9
+      pivot: {x: 0.4797803, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d372abaa4cf941bc9da2b9f064e4853
+      internalID: 6291719390379607694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 30
+        width: 75
+        height: 145
+      alignment: 9
+      pivot: {x: 0.47472656, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b46b5865d0434007a91b80ec5a7593a
+      internalID: 9092155747782539019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ende_walk_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 30
+        width: 75
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1daac4a8d4c45e2aee04c21a197613
+      internalID: -445116050215973637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
