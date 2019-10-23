@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public BookController _bookController;
-    public InkManager _inkManager;
     public GameObject bookPrefab;
 
     private Canvas uiCanvas;
     public static GameManager instance;
+    
+    public LayerMask interactObj;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,9 +39,9 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        ShowMouseHover();
     }
 
     public void DisplayItem()
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
                     if (hit[i].collider.gameObject.CompareTag("NPC"))
                     {
                         //this may not always be the case BUT FOR NOW IT IS
-                        _inkManager.OpenDialoguePanel(hit[i].collider.name);
+                        InkManager.instance.OpenDialoguePanel(hit[i].collider.name);
                     }
                     
                     else if (hit[i].collider.gameObject.CompareTag("book"))
@@ -63,6 +65,38 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-            
+    }
+
+    public void ExamineItem()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos, Vector3.forward, 1000f);
+        for (int i = 0; i < hit.Length; i++)
+        {
+            if (hit[i].collider != null && hit[i].collider.gameObject
+                    .GetComponent<InteractionObject>() != null)
+            {
+                DescriptionController.instance.ShowDescriptionBox(hit[i].collider.gameObject
+                    .GetComponent<InteractionObject>().descriptionKey);
+            }
+        }
+    }
+
+    private void ShowMouseHover()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        RaycastHit2D[] hit = Physics2D.RaycastAll(mousePos, Vector3.forward, 1000f, interactObj);
+
+        for (int i = 0; i < hit.Length; i++)
+        {
+            if (hit[i].collider != null)
+            {
+                hit[i].collider.gameObject.GetComponent<InteractionObject>().ShowOutline();
+            }
+        }
+        
+        
     }
 }

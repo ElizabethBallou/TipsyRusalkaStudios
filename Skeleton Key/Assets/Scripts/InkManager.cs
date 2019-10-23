@@ -9,6 +9,8 @@ using TMPro;
 
 public class InkManager : MonoBehaviour
 {
+
+	public static InkManager instance;
 	private Story story;
 	private bool textDone;
 	private int buttonNumber;
@@ -31,6 +33,9 @@ public class InkManager : MonoBehaviour
 
 	public void Start()
 	{
+		//establish the singleton
+		instance = this;
+		
 		//Find all the UI components
 		uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 		dialogueBox = Instantiate<Image>(textboxPrefab, uiCanvas.transform);
@@ -55,8 +60,7 @@ public class InkManager : MonoBehaviour
 		dialogueBox.gameObject.SetActive(false);
 		//
 		//
-		//
-		//
+	
 		TextAsset storyFile = Resources.Load<TextAsset>("master_dialogue_file");
 		Debug.Log("Story file loaded");
 		story = new Story(storyFile.text);

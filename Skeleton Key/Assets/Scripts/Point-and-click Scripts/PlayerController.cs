@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour
                 CalculateSpace.instance.SetTargetPosition();
                 break;
             case 1:
+                _gameManager.ExamineItem();
                 Debug.Log("You examine the object.");
-                _gameManager.DisplayItem();
                 cursorSprite.transform.SetAsLastSibling();
                 break;
             case 2:

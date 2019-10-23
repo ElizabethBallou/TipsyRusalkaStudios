@@ -1,0 +1,5 @@
+Desk	An old wooden desk. This would be an ideal place to sit and read for hours, if one were in the mood.
+Globe	A map, but - stretched over the shape of a sphere? You have never seen anything like this. Nor have you seen many of the places on it. There is a locked panel on the sphere.
+Pile_of_papers	A pile of crumpled papers. The words on them make no sense to you.
+Letizia	A figure wearing shape-concealing robes. Are they - even alive?
+Books	These shelves contain rows upon rows of books, more than you have ever seen in one place. You didn't know it was possible to MAKE this many books, let alone collect them. The titles on the books' spines make no sense.

@@ -1,6 +1,6 @@
 VAR seen_Letizia = false
+VAR fire_lit = false
 
--> Letizia_first_conversation_knot
 === Letizia_first_conversation_knot ===
 ~ character_name = "Old Librarian"
 ~ seen_Letizia = true
@@ -89,9 +89,14 @@ VAR seen_Letizia = false
                     - - - The Chapter of the Locked Doors. It has gone on for a long, long time.
                         ->Ende_asks_questions
     = Letizia_gives_quest
-        light me a fire please
-        -> DONE
-        
+        I am so cold, Ende. I have been lying here for so long. Will you do something for me? Light me a fire in that grate over there. In the center of the room.
+        * (Ende_is_greedy) What will I get if I help you? <>
+        * (Ende_doesnt_understand) But I still don't understand any of this! <>
+        -   {Ende_is_greedy: So very transactional! I do have information to offer you, however.} {Ende_doesnt_understand: The Library does not care if you understand, my dear. And, eventually, neither will you.} Light a fire to warm my old skin, and I will tell you where to find the doors.
+            * * Doors? So there ARE ways to get out of here?
+            -   - Of course. One must simply know where to look.
+                -> DONE
+            
 === Letizia_default_conversation_knot ===
     This is default text that appears after you have already spoken to Letizia once.
     -> DONE
