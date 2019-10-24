@@ -11,12 +11,16 @@ public class PickController : MonoBehaviour
     public Collider2D keyhole;
 
     public GameObject winUI;
+    public GameObject nextUI;
+    public GameObject levelHolder;
 
     private Camera _camera;
     private Rigidbody2D _rb2d;
     public Transform startPos;
     private Quaternion _defaultRotation;
     private Quaternion _defaultCamRotation;
+    private int levelIndex;
+    private List<GameObject> levels = new List<GameObject>();
     
     private bool _reset;
 
@@ -34,6 +38,11 @@ public class PickController : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _defaultRotation = transform.rotation;
         _defaultCamRotation = _camera.transform.rotation;
+
+        for (int i = 0; i < levelHolder.transform.childCount; i++)
+        {
+            levels.Add(levelHolder.transform.GetChild(i).gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -81,10 +90,27 @@ public class PickController : MonoBehaviour
 
     public void Win()
     {
-        winUI.SetActive(true);
-        TimeManager.timeManager.tickingSound.Stop();
+        if (levelIndex < 2)
+        {
+            nextUI.SetActive(true);
+            TimeManager.timeManager.tickingSound.Stop();
+        }
+        else
+        {
+            winUI.SetActive(true);
+            TimeManager.timeManager.tickingSound.Stop();
+        }
     }
 
+    public void NextLevel()
+    {
+        levels[levelIndex].SetActive(false);
+        levelIndex++;
+        levels[levelIndex].SetActive(true);
+        nextUI.SetActive(false);
+        Reset();
+        TimeManager.timeManager.ResetTimer();
+    }
     public void PlayAgain()
     {
         SceneManager.LoadScene(0);

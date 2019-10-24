@@ -15,7 +15,7 @@ public class ItemDatabase : MonoBehaviour
         itemList.Add(new Item("Book of Spells", 3, "An old tome filled with archaic runes. They don't resemble any language you've seen before."));
         itemList.Add(new Item("Key", 4, "An old and rusted key of bronze."));
         itemList.Add(new Item("Lock Pick", 5, "Your trusty lock pick. The one Sister Maria gave you at the nunnery."));
-        itemList.Add(new Item("Quill", 6, "A gaudy quill made from an ostrich's feather. Alas, there is no ink."));
+        itemList.Add(new Item("Quill", 6, "A gaudy quill made from an ostrich feather. Alas, there is no ink."));
         itemList.Add(new Item("Ruby Amulet", 7, "A glowing red ruby set in a solid gold pendant."));
         itemList.Add(new Item("Scroll", 8, "A delicate, crumbling scroll written in the hand of the Librarian."));
         itemList.Add(new Item("Vial of Blood", 9, "A little glass vial of dark red blood."));

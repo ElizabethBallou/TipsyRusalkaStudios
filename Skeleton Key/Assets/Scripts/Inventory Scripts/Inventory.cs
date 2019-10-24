@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,28 +12,29 @@ public class Inventory : MonoBehaviour
     
     public int slotsX = 4;
     public int slotsY = 5;
-    public GUISkin slotSkin;
-
-    public PlayerController playerController;
+    public GameObject inventoryHolder;
+    public GameObject tooltip;
     
     private ItemDatabase _database;
     private int _prevIndex;
-    private float _iconWidth = 100;
-    private float _iconHeight = 100;
+    private int _currentIndex;
     private GUIStyle _style;
     private Vector2 _size;
     private bool _showInventory;
     private bool _showTooltip;
     private bool _draggingItem;
+    private Item _draggedItem;
     private string _tooltip;
-    public Item _draggedItem;
+    private Sprite _currentItem;
+    private TextMeshProUGUI _tooltipText;
 
     public static Inventory instance;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        
+        _tooltipText = tooltip.GetComponentInChildren<TextMeshProUGUI>();
+
         //for the grid defined by the values slotsX and slotsY
         for (int i = 0; i < (slotsX * slotsY); i++)
         {
@@ -46,169 +48,153 @@ public class Inventory : MonoBehaviour
         _database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
         
         //Add the following items to our inventory from the start
-        for (int i = 2; i < 10; i++)
-        {
-            AddItem(i);
-        }
+        AddItem(2);
+        AddItem(5);
+        AddItem(6);
+        AddItem(8);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if we've pressed the inventory button "I"
         if (Input.GetKeyUp(KeyCode.I))
         {
-            //set our boolean to the opposite of its current state
             _showInventory = !_showInventory;
+            if(_showInventory)
+            {
+                OpenInventory();
+            }
+            else
+            {
+                CloseInventory();
+            }
         }
-
-        //if we've pressed the "R" button
-        /*if (Input.GetKey(KeyCode.R))
-        { 
-            //remove the define Item
-            Debug.Log("delete!");
-            RemoveItem(2);
-        }*/
-    }
-    
-    private void OnGUI()
-    {
-        //reset the tooltip content to be empty
-        _tooltip = "";
-        //get our reference to our custom GUISkin
-        GUI.skin = slotSkin;
         
-        //if we're currently showing the inventory
         if (_showInventory)
         {
-            //draw the inventory
-            DrawInventory();
-            
-            //if we're currently showing a tooltip
-            if (_showTooltip)
+            if (GetCurrentItemIcon())
             {
-                //set the content to be equal to our tooltip string
-                GUIContent content = new GUIContent(_tooltip);
-                
-                //set our tooltip parameters according to our aesthetic preference
-                _style = GUI.skin.box;
-                _style.fontSize = 20;
-                _style.alignment = TextAnchor.UpperLeft;
-                //calculate the size of the tooltip box based on the content (the size of the string)
-                _size = _style.CalcSize(content);
-                _style.wordWrap = true;
-
-                //draw our tooltip at the position of our mouse according to the size and style determined above
-                GUI.Box(new Rect(Event.current.mousePosition.x + 20f, Event.current.mousePosition.y, _size.x, _size.y), _tooltip, _style);
+                DragItem();
+                ShowTooltip();
             }
-            
-            //if we're currently dragging an item
-            if (_draggingItem)
+            else
             {
-                //draw the icon of that item at the position of our mouse according to the size of the original icon
-                GUI.DrawTexture(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, _iconWidth, _iconHeight), _draggedItem.itemIcon);
+                //Move items into empty slots - need index to reference empty slot.
+                /*if (Input.GetMouseButtonUp(0) && _draggingItem)
+                {
+                    //the item we're currently dragging goes into the slot our cursor is hovering over
+                    inventory[_currentIndex] = _draggedItem;
+                    _draggingItem = false;
+                    _draggedItem = null;
+                }*/
+                tooltip.SetActive(false);
             }
         }
     }
 
-    void DrawInventory()
+    void OpenInventory()
     {
-        Event e = Event.current;
         int i = 0;
-        
+
         //for every row in our inventory
         for (int y = 0; y < slotsY; y++)
         {
             //and for every slot in every row
             for (int x = 0; x < slotsX; x++)
             {
-                //define the placement and size of our slots
-                Rect slotRect = new Rect(x * 100, y * 100, 100, 100 );
-                //draw each slot according to our defined size, placement and custom GUIskin
-                GUI.Box(slotRect, "", slotSkin.GetStyle("Slot"));
-                
+                //create an empty slot and child it to the inventory
+                Image slot = Instantiate(Resources.Load<Image>("Prefabs/Inventory/Slot"), inventoryHolder.transform);
                 //set empty slots to correspond to empty item constructors
                 slots[i] = inventory[i];
                 
                 //if a slot is NOT empty
                 if (slots[i].itemName != null)
                 {
-                    //draw the item in that slot
-                    GUI.DrawTexture(slotRect, slots[i].itemIcon);
-                    //if the mouse cursor is within that slot
-                    if(slotRect.Contains(e.mousePosition))
-                    {
-                        if (playerController.cursorIndex == 3)
-                        {
-                            //and if the left mouse button is pressed AND the mouse is dragged AND we're not already dragging an item
-                            if (e.button == 0 && e.type == EventType.MouseDrag && !_draggingItem)
-                            {
-                                _draggingItem = true;
-                                //store the index of the item we're dragging
-                                _prevIndex = i;
-                                //set the dragged item to the item we clicked on
-                                _draggedItem = slots[i];
-                                //put an empty item constructor in the slot we've just emptied
-                                inventory[i] = new Item();
-                            }
-                            //or if the left mouse button is released or clicked AND we're already dragging an item
-                            if(e.type == EventType.MouseUp && _draggingItem)
-                            {
-                                //the item our cursor is hovering over goes into the slot where we previously grabbed the item we're dragging
-                                inventory[_prevIndex] = inventory[i];
-                                //the item we're currently dragging goes into the slot our cursor is hovering over
-                                inventory[i] = _draggedItem;
-                                _draggingItem = false;
-                                _draggedItem = null;
-                            }
-                        }
-
-                        if (playerController.cursorIndex == 1)
-                        {
-                            //or if we're not currently dragging an item
-                            if (!_draggingItem)
-                            {
-                                //show the tooltip based on the information defined by our CreateTooltip Function
-                                _showTooltip = true;
-                                _tooltip = CreateTooltip(slots[i]);
-                            }
-                        }
-                    }
+                    //create an item prefab in that slot and parent it to the slot
+                    Image icon = Instantiate(Resources.Load<Image>("Prefabs/Inventory/Icon"), slot.transform);
+                    //set the sprite equal to the slots current item icon
+                    icon.sprite = slots[i].itemIcon;
                 }
-                else //if a slot IS empty
-                {  
-                    //and the mouse cursor is within that slot
-                    if (slotRect.Contains(e.mousePosition))
-                    {
-                        //and the left mouse button is released or clicked AND we're already dragging an item
-                        if (e.type == EventType.MouseUp && _draggingItem)
-                        {
-                            //the item we're currently dragging goes into the slot our cursor is hovering over
-                            inventory[i] = _draggedItem;
-                            _draggingItem = false;
-                            _draggedItem = null;
-                        }
-                    }
-                }
-                //if there's no information in our tooltip string
-                if (_tooltip == "")
-                {
-                    //don't show the tooltip
-                    _showTooltip = false;
-                }
-                
                 i++;
             }
         }
     }
+    
+    void CloseInventory()
+    {
+        for (int i = 0; i < inventoryHolder.transform.childCount; i++)
+        {
+            Destroy(inventoryHolder.transform.GetChild(i).gameObject);
+        }
+    }
 
-    string CreateTooltip(Item item)
+    bool GetCurrentItemIcon()
+    {
+        var mousePos = Input.mousePosition;
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector3.forward, 1000f);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.name == "Icon(Clone)")
+            {
+                _currentItem = hit.collider.GetComponent<Image>().sprite;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    string CreateTooltipText(Item item)
     {
         _tooltip = "<color=#E9E9E9><b>" + item.itemName + "</b></color>\n\n" +
                    "<color=#39AB3E><b>" + item.itemDescription + "</b></color>";
         return _tooltip;
     }
 
+    public void ShowTooltip()
+    {
+        //show the tooltip based on the information defined by our CreateTooltip Function
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (_currentItem == inventory[i].itemIcon)
+            {
+                _tooltipText.text = CreateTooltipText(inventory[i]);
+                _currentIndex = i;
+                //Debug.Log(inventory[i].itemName);
+            }
+        }
+
+        var rt = tooltip.GetComponent<RectTransform>();
+        tooltip.SetActive(true);
+        tooltip.transform.position = Input.mousePosition + new Vector3(rt.rect.width * 1.75f, -rt.rect.height * 1.75f, 0.0f);
+    }
+    
+    void DragItem()
+    {
+        if (Input.GetMouseButtonDown(0) && !_draggingItem)
+        {
+            _draggingItem = true;
+            //store the index of the item we're dragging
+            _prevIndex = _currentIndex;
+            //set the dragged item to the item we clicked on
+            _draggedItem = inventory[_currentIndex];
+            //put an empty item constructor in the slot we've just emptied
+            inventory[_currentIndex] = new Item();
+        }
+        //or if the left mouse button is released/clicked AND we're already dragging an item
+        if(Input.GetMouseButtonUp(0) && _draggingItem)
+        {
+            //the item our cursor is hovering over goes into the slot where we previously grabbed the item we're dragging
+            inventory[_prevIndex] = inventory[_currentIndex];
+            //the item we're currently dragging goes into the slot our cursor is hovering over
+            inventory[_currentIndex] = _draggedItem;
+            _draggingItem = false;
+            _draggedItem = null;
+            CloseInventory();
+            OpenInventory();
+        }
+    }
+    
     public void AddItem(int id)
     {    
         //loop through every element in our inventory
