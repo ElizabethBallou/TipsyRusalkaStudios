@@ -63,13 +63,13 @@ public class PlayerController : MonoBehaviour
             MovePlayer();
         }
 
-        if (IsMoving())
+        if (IsMoving() && CalculateSpace.instance.TargetIsFloor())
         {
             ScalePlayer();
             endeAnim.SetBool("isMoving", true);
         }
 
-        if (!IsMoving())
+        if (!IsMoving() || !CalculateSpace.instance.TargetIsFloor())
         {
             endeAnim.SetBool("isMoving", false);
         }
