@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameManager _gameManager;
     private Camera cam;
     private SpriteRenderer playerSprite;
 
@@ -31,7 +30,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _gameManager = GameManager.instance;
         cam = Camera.main;
         Cursor.visible = false;
         cursorIndex = 0;
@@ -71,16 +69,17 @@ public class PlayerController : MonoBehaviour
 
     void LeftClick()
     {
-        if (Inventory.instance._draggedItem.itemName == "Lock Pick")
-        {
-            Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        //if (Inventory.instance._draggedItem.itemName == "Lock Pick")
+        //{
+            
 
             /*if (hit.collider == door)
             {
                 SceneManager.LoadScene(1);
             }*/
-        }
+        //}
 
         switch (cursorIndex)
         {
@@ -88,16 +87,18 @@ public class PlayerController : MonoBehaviour
                 CalculateSpace.instance.SetTargetPosition();
                 break;
             case 1:
-                _gameManager.ExamineItem();
+                UIManager.instance.ExamineItem();
                 Debug.Log("You examine the object.");
                 cursorSprite.transform.SetAsLastSibling();
                 break;
             case 2:
                 Debug.Log("It doesn't say much.");
-                _gameManager.DisplayItem();
+                UIManager.instance.OpenNPCDialogue();
                 cursorSprite.transform.SetAsLastSibling();
                 break;
             case 3:
+                UIManager.instance.SummonBook();
+                cursorSprite.transform.SetAsLastSibling();
                 Take();
                 break;
             default:

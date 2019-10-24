@@ -10,9 +10,10 @@ using Random = System.Random;
 
 public class BookController : MonoBehaviour
 {
-    private GameObject myBook;
-    public TextMeshProUGUI leftPageText;
-    public TextMeshProUGUI rightPageText;
+    public static BookController instance;
+
+    private TextMeshProUGUI leftPageText;
+    private TextMeshProUGUI rightPageText;
     private string sourceText;
     private string RandomString;
     public int ChunkSize; //how many chunks will be printed into the text object
@@ -27,19 +28,8 @@ public class BookController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //load in all the ui objects
-        //myBook = Instantiate(bookPrefab, uiCanvas.transform);
-        //leftPageText = GameObject.Find("LeftPage").GetComponent<TextMeshProUGUI>();
-        //locate the text objects we will be using to display the book
-        //rightPageText = GameObject.Find("RightPage").GetComponent<TextMeshProUGUI>();
-        //leftButton = GameObject.Find("RandomizeLeft").GetComponent<Button>();
-        //rightButton = GameObject.Find("RandomizeRight").GetComponent<Button>();
-        //exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
-        //add appropriate listeners to buttons
-        //leftButton.onClick.AddListener(()=>ChooseRandomString());
-        //rightButton.onClick.AddListener(()=>ChooseRandomString());
-        //exitButton.onClick.AddListener(()=>OnButtonExit());
         
+        instance = this;
         //locate the source .txt file
         string sourceTextPath = "Assets/Resources/Arabian Nights text.txt"; 
         //get all the text of the book
@@ -64,13 +54,16 @@ public class BookController : MonoBehaviour
         }
         
     }
-    
-    // Update is called once per frame
-    public void SummonBook()
+
+    private void Start()
     {
-        gameObject.SetActive(true);
-        ChooseRandomString();
+        leftPageText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        rightPageText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        
     }
+
+    // Update is called once per frame
+    
 
     public void ChooseRandomString()
     {
@@ -92,6 +85,6 @@ public class BookController : MonoBehaviour
 
     public void OnButtonExit()
     {
-        gameObject.SetActive(false);
+        UIManager.instance.SwitchUIState(UIState.NoMotherfuckingUI);
     }
 }

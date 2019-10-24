@@ -97,11 +97,16 @@
         </e>
         <e p="Resources" t="Include">
           <e p="Arabian Nights text.txt" t="Include" />
+          <e p="Descriptions" t="Include">
+            <e p="Descriptions.txt" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="BookController.cs" t="Include" />
+          <e p="DescriptionController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InkManager.cs" t="Include" />
+          <e p="InteractionObject.cs" t="Include" />
           <e p="Inventory Scripts" t="Include">
             <e p="Inventory.cs" t="Include" />
             <e p="Item.cs" t="Include" />
@@ -121,6 +126,13 @@
             <e p="CalculateSpace.cs" t="Include" />
             <e p="CameraFollow.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="UIJank.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
+        </e>
+        <e p="SpriteOutline" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="SpriteOutline.shader" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

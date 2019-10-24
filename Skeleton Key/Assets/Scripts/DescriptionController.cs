@@ -63,6 +63,6 @@ public class DescriptionController : MonoBehaviour
 
     public void CloseDescriptionBox()
     {
-        DescriptionBox.gameObject.SetActive(false);
+        UIManager.instance.SwitchUIState(UIState.NoMotherfuckingUI);
     }
 }

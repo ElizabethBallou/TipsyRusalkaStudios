@@ -17,9 +17,9 @@ public class InkManager : MonoBehaviour
 	
 	// UI stuff
 	public Image blackBackground;
-	public Image textboxPrefab;
+	//public Image textboxPrefab;
 	private Canvas uiCanvas;
-	private Image dialogueBox;
+	public Image dialogueBox;
 	private TextMeshProUGUI dialogueText;
 	private TextMeshProUGUI characterNameText;
 	private string currentText;
@@ -31,14 +31,14 @@ public class InkManager : MonoBehaviour
 
 	public int maxCharactersPerBox;
 
-	public void Start()
+	public void Awake()
 	{
 		//establish the singleton
 		instance = this;
 		
 		//Find all the UI components
 		uiCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-		dialogueBox = Instantiate<Image>(textboxPrefab, uiCanvas.transform);
+		//dialogueBox = Instantiate<Image>(textboxPrefab, uiCanvas.transform);
 		dialogueText = dialogueBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 		characterNameText = dialogueBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 		
@@ -176,7 +176,7 @@ public class InkManager : MonoBehaviour
 		// if dialogue.text == "", do nothing
 		// remove dialogue.text from the front of current text, then do the rest
 		currentText = currentText.Substring(dialogueText.text.Length, currentText.Length - dialogueText.text.Length);
-		if (currentText.Length < maxCharactersPerBox)
+		if (currentText.Length <= maxCharactersPerBox)
 		{
 			dialogueText.text = currentText;
 			textDone = true;
@@ -247,8 +247,8 @@ public class InkManager : MonoBehaviour
 
 	public void ExitTextBox()
 	{
-		dialogueBox.gameObject.SetActive(false);
 		blackBackground.gameObject.SetActive(false);
+		UIManager.instance.SwitchUIState(UIState.NoMotherfuckingUI);
 	}
 
 }

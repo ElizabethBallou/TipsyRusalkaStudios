@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bca962-7c89-4cd8-b286-b800e91ad1b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeleton Key/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InkLibrary.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InkLibrary.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Letizia conversation files.ink" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Letizia conversation files.ink.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Letizia conversation files.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Letizia conversation files.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.ink" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.ink.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skeleton Key inky file.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2DTextures/Characters/Monk_inpain.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2DTextures/Characters/Monk_inpain.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elizabeth test point and click.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elizabeth test point and click.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DescriptionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DescriptionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,30 +27,35 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Elizabeth Test Scene.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2DTextures/Characters.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/StoryState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BookController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SpriteOutline/Demo.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Controller.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/Downloads/StoryParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NPCController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../AThousandCutsRedux/Assets/Scripts/TextingManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIJank.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/2DTextures/LockpickPuzzleArt/Updated Puzzle/flowers.png.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Fonts/ADega Serif Regular SDF.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InteractionObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Container.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../RedoneShakespeare/Something Sexy/Assets/Scripts/YorickController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/InkConversationUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Downloads/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DescriptionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/BookPage.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Text Box.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Ink Controller.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Code Lab 1 Projects/CodeLab1-2019-Classwork/CodeLab1-2019-Class5-Files/Assets/Scripts/HighScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/Downloads/StoryParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/Example/Scripts/BasicInkExample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../AThousandCutsRedux/Assets/Scripts/TextingManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2DTextures/LockpickPuzzleArt/Updated Puzzle/flowers.png.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Fonts/ADega Serif Regular SDF.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Materials/RegularSpriteMat.mat.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Point-and-click Scene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Ink/InkRuntime/Story.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Prefabs/Dirty Hands Jane.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -61,10 +63,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Actor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StoryParser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NPCController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InteractionObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DescriptionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Point-and-click Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BookController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InkManager.cs" />
       </list>
     </option>
@@ -146,7 +151,11 @@
       <workItem from="1571334048496" duration="8907000" />
       <workItem from="1571608583502" duration="8237000" />
       <workItem from="1571699139206" duration="4041000" />
-      <workItem from="1571762991261" duration="11358000" />
+      <workItem from="1571762991261" duration="11969000" />
+      <workItem from="1571843621113" duration="2849000" />
+      <workItem from="1571855484378" duration="6570000" />
+      <workItem from="1571869194775" duration="1723000" />
+      <workItem from="1571938203396" duration="4359000" />
     </task>
     <task id="LOCAL-00001" summary="ui struggles :/ Mitu, this is the most recent commit">
       <created>1567356110712</created>
@@ -274,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571776264303</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="MULTIPLE NPC FUNCTIONALITY. THANK U ROWAN">
+      <created>1571783780099</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1571783780099</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added outline shader, description box, descriptions">
+      <created>1571869287104</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1571869287104</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +339,9 @@
     <MESSAGE value="added Letizia. Troubleshot the conversation with her (thanks Connor)" />
     <MESSAGE value="conversation UI working a bit better. new background art/font" />
     <MESSAGE value="dialogue panel is now working! talk to Letizia as many times as you want, bitch" />
-    <option name="LAST_COMMIT_MESSAGE" value="dialogue panel is now working! talk to Letizia as many times as you want, bitch" />
+    <MESSAGE value="MULTIPLE NPC FUNCTIONALITY. THANK U ROWAN" />
+    <MESSAGE value="added outline shader, description box, descriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added outline shader, description box, descriptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
