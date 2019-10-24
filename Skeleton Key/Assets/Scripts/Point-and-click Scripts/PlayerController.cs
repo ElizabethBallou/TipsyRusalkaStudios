@@ -155,20 +155,22 @@ public class PlayerController : MonoBehaviour
             anim.speed = 0;
         }
     }
-    
+
     void MovePlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, CalculateSpace.instance.newPos, Time.deltaTime * speed);
-        if(CalculateSpace.instance.newPos.x < transform.position.x)
+        transform.position =
+            Vector2.MoveTowards(transform.position, CalculateSpace.instance.newPos, Time.deltaTime * speed);
+        if (CalculateSpace.instance.newPos.x < transform.position.x)
         {
             playerSprite.flipX = true;
         }
-        if(CalculateSpace.instance.newPos.x > transform.position.x)
+
+        if (CalculateSpace.instance.newPos.x > transform.position.x)
         {
             playerSprite.flipX = false;
         }
     }
-    
+
     private bool IsMoving()
     {
         return (new Vector2(transform.position.x, transform.position.y) != CalculateSpace.instance.newPos);
@@ -177,6 +179,7 @@ public class PlayerController : MonoBehaviour
     private void ScalePlayer(){
         var lerpRate = ((transform.position.y - southWall.position.y) / (northWall.position.y - southWall.position.y));
         var playerScale = Vector2.Lerp(playerMaxScale, playerMinScale, lerpRate);
+        //speed = Mathf.Lerp(speed, 2, lerpRate);
         transform.localScale = playerScale;
     }
     
@@ -203,9 +206,7 @@ public class PlayerController : MonoBehaviour
             }
         }*/
 
-        if (hit.collider == null)
-        {
+   
             Debug.Log("It doesn't budge.");
-        }
     }
 }
