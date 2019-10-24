@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     void LeftClick()
     {
-        if (Inventory.instance._draggedItem.itemName == "Lock Pick")
+        /*f (Inventory.instance._draggedItem.itemName == "Lock Pick")
         {
             Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
@@ -86,8 +86,8 @@ public class PlayerController : MonoBehaviour
             /*if (hit.collider == door)
             {
                 SceneManager.LoadScene(1);
-            }*/
-        }
+            }#1#
+        }*/
 
         switch (cursorIndex)
         {
