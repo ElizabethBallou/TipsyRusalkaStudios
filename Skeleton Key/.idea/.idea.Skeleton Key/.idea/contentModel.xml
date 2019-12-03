@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\eliza\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\eliza\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Skeleton Key.677078214.00" t="ExcludeRecursive" />
-    <e p="D:\Documents\Unity Project Files\TipsyRusalkaStudios\Skeleton Key" t="IncludeRecursive">
+    <e p="C:\Users\ps380\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ps380\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Skeleton Key.1355881002.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ps380\Desktop\LibraryThesis\SkeletonKey\Skeleton Key" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -122,6 +122,11 @@
             <e p="TimeManager.cs" t="Include" />
           </e>
           <e p="NPCController.cs" t="Include" />
+          <e p="Palmmy_BG+UI" t="Include">
+            <e p="Book_Test.cs" t="Include" />
+            <e p="Shelves_Test.cs" t="Include" />
+            <e p="ZoomQuit.cs" t="Include" />
+          </e>
           <e p="Point-and-click Scripts" t="Include">
             <e p="CalculateSpace.cs" t="Include" />
             <e p="CameraFollow.cs" t="Include" />

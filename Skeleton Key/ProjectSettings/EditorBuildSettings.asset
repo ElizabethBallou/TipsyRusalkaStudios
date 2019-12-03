@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LockPickPuzzle_1.0.unity
     guid: 879cefd67cdf34d90ac75ad20b7de7ff
+  - enabled: 1
+    path: Assets/Scenes/Palmmy/NormalRoom.unity
+    guid: 09077e030b7340a49a7c70d96040a63b
+  - enabled: 1
+    path: Assets/Scenes/Palmmy/ZoomedShelf.unity
+    guid: 5114408fcb806584aa314b531a9f481d
+  - enabled: 1
+    path: Assets/Scenes/Palmmy/ZoomedBook.unity
+    guid: b02ec6c3e34532a4087249e5ba8847f1
   m_configObjects: {}

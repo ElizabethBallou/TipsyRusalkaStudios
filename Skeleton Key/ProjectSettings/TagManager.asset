@@ -55,3 +55,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Zoomed
+    uniqueID: 3721691537
+    locked: 0
